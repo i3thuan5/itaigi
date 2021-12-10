@@ -150,3 +150,11 @@ def pokam_item(request, pianho, mngho):
         'sutin': sutin,
         'mngtin': mngtin,
     })
+
+
+def tsutsheh(request):
+    return render(request, 'tsutsheh/tsutsheh.html')
+
+
+def tingjip(request):
+    return render(request, 'tsutsheh/tingjip.html')
