@@ -156,5 +156,9 @@ def tsutsheh(request):
     return render(request, 'tsutsheh/tsutsheh.html')
 
 
+def jintsing(request):
+    return render(request, 'tsutsheh/jintsing.html')
+
+
 def tingjip(request):
     return render(request, 'tsutsheh/tingjip.html')
