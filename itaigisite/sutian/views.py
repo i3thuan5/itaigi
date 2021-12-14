@@ -62,6 +62,7 @@ def khautso(request):
     title = tau_title('個人頁面')
     return render(request, 'gua/khautso.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -69,6 +70,7 @@ def siutsong(request):
     title = tau_title('我收藏的發問')
     return render(request, 'gua/siutsong.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -76,6 +78,7 @@ def siutsong_item(request, pianho):
     title = tau_title('清單XXX', '我收藏的發問')
     return render(request, 'gua/siutsong_item.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -83,6 +86,7 @@ def mng(request):
     title = tau_title('我的發問')
     return render(request, 'gua/mng.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -90,6 +94,7 @@ def tap(request):
     title = tau_title('我的回答')
     return render(request, 'gua/tap.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -97,6 +102,7 @@ def kuantsu(request):
     title = tau_title('我關注的發問')
     return render(request, 'gua/kuantsu.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -104,6 +110,7 @@ def thongti(request):
     title = tau_title('個人通知')
     return render(request, 'gua/thongti.html', {
         'title': title,
+        'norobots': True,
     })
 
 
@@ -212,6 +219,7 @@ def jintsing(request):
     title = tau_title('已寄認證信')
     return render(request, 'tsutsheh/jintsing.html', {
         'title': title,
+        'norobots': True,
     })
 
 
