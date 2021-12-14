@@ -9,7 +9,7 @@ def tau_title(*argv):
 
 
 def tiann(request):
-    title = tau_title('')
+    title = tau_title()
     return render(request, 'sutian/tiann.html', {
         'title': title,
     })
@@ -66,35 +66,59 @@ def khautso(request):
 
 
 def siutsong(request):
-    return render(request, 'gua/siutsong.html')
+    title = tau_title('我收藏的發問')
+    return render(request, 'gua/siutsong.html', {
+        'title': title,
+    })
 
 
 def siutsong_item(request, pianho):
-    return render(request, 'gua/siutsong_item.html')
+    title = tau_title('清單XXX', '我收藏的發問')
+    return render(request, 'gua/siutsong_item.html', {
+        'title': title,
+    })
 
 
 def mng(request):
-    return render(request, 'gua/mng.html')
+    title = tau_title('我的發問')
+    return render(request, 'gua/mng.html', {
+        'title': title,
+    })
 
 
 def tap(request):
-    return render(request, 'gua/tap.html')
+    title = tau_title('我的回答')
+    return render(request, 'gua/tap.html', {
+        'title': title,
+    })
 
 
 def kuantsu(request):
-    return render(request, 'gua/kuantsu.html')
+    title = tau_title('我關注的發問')
+    return render(request, 'gua/kuantsu.html', {
+        'title': title,
+    })
 
 
 def thongti(request):
-    return render(request, 'gua/thongti.html')
+    title = tau_title('個人通知')
+    return render(request, 'gua/thongti.html', {
+        'title': title,
+    })
 
 
 def miasenn(request):
-    return render(request, 'sutian/miasenn.html')
+    title = tau_title('查詢名姓發音')
+    return render(request, 'sutian/miasenn.html', {
+        'title': title,
+    })
 
 
 def pokam(request):
-    return render(request, 'pokam/pokam.html')
+    title = tau_title('台語寶鑑')
+    return render(request, 'pokam/pokam.html', {
+        'title': title,
+    })
 
 
 def pokam_list(request, pianho):
@@ -111,7 +135,9 @@ def pokam_list(request, pianho):
         '水箭龜',
     ]
     lui = '抱去摸'
+    title = tau_title('XXXX', '台語寶鑑')
     return render(request, 'pokam/pokam_sohin.html', {
+        'title': title,
         'lui': lui,
         'mngtin': mngtin,
     })
@@ -165,7 +191,9 @@ def pokam_item(request, pianho, mngho):
         'tsan': 12,
         'siutsong': 5,
     }]
+    title = tau_title('OOO', 'XXXX', '台語寶鑑')
     return render(request, 'pokam/pokam_item.html', {
+        'title': title,
         'lui': lui,
         'piaute': piaute,
         'sutin': sutin,
@@ -174,12 +202,21 @@ def pokam_item(request, pianho, mngho):
 
 
 def tsutsheh(request):
-    return render(request, 'tsutsheh/tsutsheh.html')
+    title = tau_title('註冊')
+    return render(request, 'tsutsheh/tsutsheh.html', {
+        'title': title,
+    })
 
 
 def jintsing(request):
-    return render(request, 'tsutsheh/jintsing.html')
+    title = tau_title('已寄認證信')
+    return render(request, 'tsutsheh/jintsing.html', {
+        'title': title,
+    })
 
 
 def tingjip(request):
-    return render(request, 'tsutsheh/tingjip.html')
+    title = tau_title('登入')
+    return render(request, 'tsutsheh/tingjip.html', {
+        'title': title,
+    })
