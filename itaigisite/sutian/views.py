@@ -3,11 +3,20 @@ from django.shortcuts import render
 # Create your views here.
 
 
+def tau_title(*argv):
+    _te = ['iTaigi公民華台辭典', ]
+    return ' | '.join(list(argv) + _te)
+
+
 def tiann(request):
-    return render(request, 'sutian/tiann.html')
+    title = tau_title('')
+    return render(request, 'sutian/tiann.html', {
+        'title': title,
+    })
 
 
 def k(request, ji):
+    title = tau_title('查詢辭典{}'.format(ji))
     sutin = [{
         'id': 1134,
         'lo': 'jio̍k-huâ',
@@ -18,6 +27,7 @@ def k(request, ji):
         'siutsong': 5,
     }] * 3
     return render(request, 'tshiau/tshiau.html', {
+        'title': title,
         'sutin': sutin,
     })
 
@@ -25,6 +35,7 @@ def k(request, ji):
 def tshiau(request):
     if request.GET:
         tshiau = request.GET['tshiau']
+        title = tau_title('查詢辭典{}'.format(tshiau))
         sutin = [{
             'id': 1134,
             'lo': 'jio̍k-huâ',
@@ -35,13 +46,23 @@ def tshiau(request):
             'siutsong': 5,
         }] * 3
         return render(request, 'tshiau/tshiau.html', {
+            'title': title,
             'tshiau': tshiau,
             'sutin': sutin,
         })
+    title = tau_title('查詢辭典')
+    return render(request, 'tshiau/tshiau.html', {
+        'title': title,
+        'tshiau': [],
+        'sutin': [],
+    })
 
 
 def khautso(request):
-    return render(request, 'gua/khautso.html')
+    title = tau_title('個人頁面')
+    return render(request, 'gua/khautso.html', {
+        'title': title,
+    })
 
 
 def siutsong(request):
