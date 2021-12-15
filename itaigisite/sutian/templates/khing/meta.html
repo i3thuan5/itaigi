@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow, noarchive, notranslate"/>
 {% endif %}
 <!--fb-->
-<meta property="og:url" content="{{ request.get_full_path }}"/>
+<meta property="og:url" content="{{ request.build_absolute_uri }}"/>
 <meta property="og:title" content="{{ title }}"/>
 <meta property="og:description" content="透過群眾發問、回答參與辭典，皆開放大眾查詢。辭典內容屬於台灣創用CC授權0，歡迎非商業與商業利用。本專案構想來自g0v零時政府萌典開源辭典。"/>
 <meta property="og:image" content="https://g0v.github.io/itaigi/design/logo_og.png">
