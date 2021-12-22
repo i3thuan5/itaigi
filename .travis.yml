@@ -4,9 +4,6 @@ node_js:
 - '15'
 env:
 - TSI2_LING7='build'
-branches:
-  only:
-  - master
 script:
 - echo npm run $TSI2_LING7
 - npm run $TSI2_LING7
