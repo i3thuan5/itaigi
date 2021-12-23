@@ -208,6 +208,13 @@ def pokam_item(request, pianho, mngho):
     })
 
 
+def tsutsheh(request):
+    title = tau_title('註冊')
+    return render(request, 'tsutsheh/tsutsheh.html', {
+        'title': title,
+    })
+
+
 def tingjip(request):
     title = tau_title('登入')
     return render(request, 'tsutsheh/tingjip.html', {

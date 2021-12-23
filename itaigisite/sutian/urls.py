@@ -1,7 +1,7 @@
 from django.urls import path
 from sutian.views import tiann, k, tshiau, khautso, siutsong, \
     siutsong_item, mng, tap, thongti, miasenn, kuantsu, \
-    pokam, pokam_list, pokam_item, tingjip
+    pokam, pokam_list, pokam_item, tsutsheh, tingjip
 
 urlpatterns = [
     # 舊網址
@@ -16,6 +16,7 @@ urlpatterns = [
     path('kuantsu/', kuantsu, name='kuantsu'),
     path('thongti/', thongti, name='thongti'),
 
+    path('tsutsheh/', tsutsheh, name='tsutsheh'),
     path('tingjip/', tingjip, name='tingjip'),
 
     path('miasenn/', miasenn, name='miasenn'),
