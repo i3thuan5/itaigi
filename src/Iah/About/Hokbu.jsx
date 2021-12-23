@@ -41,11 +41,12 @@ class Hokbu extends React.Component {
 </section>
 <section className="margin-b-2">
 <h2 id="konghian">您的貢獻</h2>
-<p>iTaigi 資料庫乃是按照 Creative Commons CC0 公眾領域貢獻宣告 建立而成，這表示此資料庫為公開性質，同時我們也會在法律允許的範圍內放棄所有著作權。如果您參與 iTaigi，則您也必須如此。您必須同意 iTaigi 得按照 CC0 公眾領域貢獻宣告將您貢獻的內容（包含文字、意見回饋）提供給公眾使用。</p>
+<p>iTaigi 資料庫乃是按照 <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero 授權條款（CC0）（外部連結）</a> 公眾領域貢獻宣告 建立而成，這表示此資料庫為公開性質，同時我們也會在法律允許的範圍內放棄所有著作權。
+如果您參與 iTaigi，則您也必須如此。您必須同意 iTaigi 得按照 <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0（外部連結）</a> 公眾領域貢獻宣告將您貢獻的內容（包含文字、意見回饋）提供給公眾使用。</p>
 <p>為參與 iTaigi，還必須要求您保證兩件事：</p>
 <ol>
-<li>您的貢獻內容必須完全由您創造而成。</li>
-<li>您的貢獻內容不得侵犯任何第三方的權利。</li>
+  <li>您的貢獻內容必須完全由您創造而成。</li>
+  <li>您的貢獻內容不得侵犯任何第三方的權利。</li>
 </ol>
 <p>如果您無法就以上事項作出保證，則您不得參與 iTaigi。</p>
 </section>
