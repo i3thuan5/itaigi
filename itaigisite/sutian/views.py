@@ -3,11 +3,20 @@ from django.shortcuts import render
 # Create your views here.
 
 
+def tau_title(*argv):
+    _te = ['iTaigi公民華台辭典', ]
+    return ' | '.join(list(argv) + _te)
+
+
 def tiann(request):
-    return render(request, 'sutian/tiann.html')
+    title = tau_title()
+    return render(request, 'sutian/tiann.html', {
+        'title': title,
+    })
 
 
 def k(request, ji):
+    title = tau_title('查詢辭典{}'.format(ji))
     sutin = [{
         'id': 1134,
         'lo': 'jio̍k-huâ',
@@ -18,6 +27,7 @@ def k(request, ji):
         'siutsong': 5,
     }] * 3
     return render(request, 'tshiau/tshiau.html', {
+        'title': title,
         'sutin': sutin,
     })
 
@@ -25,6 +35,7 @@ def k(request, ji):
 def tshiau(request):
     if request.GET:
         tshiau = request.GET['tshiau']
+        title = tau_title('查詢辭典{}'.format(tshiau))
         sutin = [{
             'id': 1134,
             'lo': 'jio̍k-huâ',
@@ -35,45 +46,86 @@ def tshiau(request):
             'siutsong': 5,
         }] * 3
         return render(request, 'tshiau/tshiau.html', {
+            'title': title,
             'tshiau': tshiau,
             'sutin': sutin,
         })
+    title = tau_title('查詢辭典')
+    return render(request, 'tshiau/tshiau.html', {
+        'title': title,
+        'tshiau': [],
+        'sutin': [],
+    })
 
 
 def khautso(request):
-    return render(request, 'gua/khautso.html')
+    title = tau_title('個人頁面')
+    return render(request, 'gua/khautso.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def siutsong(request):
-    return render(request, 'gua/siutsong.html')
+    title = tau_title('我收藏的發問')
+    return render(request, 'gua/siutsong.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def siutsong_item(request, pianho):
-    return render(request, 'gua/siutsong_item.html')
+    title = tau_title('清單XXX', '我收藏的發問')
+    return render(request, 'gua/siutsong_item.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def mng(request):
-    return render(request, 'gua/mng.html')
+    title = tau_title('我的發問')
+    return render(request, 'gua/mng.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def tap(request):
-    return render(request, 'gua/tap.html')
+    title = tau_title('我的回答')
+    return render(request, 'gua/tap.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def kuantsu(request):
-    return render(request, 'gua/kuantsu.html')
+    title = tau_title('我關注的發問')
+    return render(request, 'gua/kuantsu.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def thongti(request):
-    return render(request, 'gua/thongti.html')
+    title = tau_title('個人通知')
+    return render(request, 'gua/thongti.html', {
+        'title': title,
+        'norobots': True,
+    })
 
 
 def miasenn(request):
-    return render(request, 'sutian/miasenn.html')
+    title = tau_title('查詢名姓發音')
+    return render(request, 'sutian/miasenn.html', {
+        'title': title,
+    })
 
 
 def pokam(request):
-    return render(request, 'pokam/pokam.html')
+    title = tau_title('台語寶鑑')
+    return render(request, 'pokam/pokam.html', {
+        'title': title,
+    })
 
 
 def pokam_list(request, pianho):
@@ -90,7 +142,9 @@ def pokam_list(request, pianho):
         '水箭龜',
     ]
     lui = '抱去摸'
+    title = tau_title('XXXX', '台語寶鑑')
     return render(request, 'pokam/pokam_sohin.html', {
+        'title': title,
         'lui': lui,
         'mngtin': mngtin,
     })
@@ -144,7 +198,9 @@ def pokam_item(request, pianho, mngho):
         'tsan': 12,
         'siutsong': 5,
     }]
+    title = tau_title('OOO', 'XXXX', '台語寶鑑')
     return render(request, 'pokam/pokam_item.html', {
+        'title': title,
         'lui': lui,
         'piaute': piaute,
         'sutin': sutin,
@@ -153,4 +209,7 @@ def pokam_item(request, pianho, mngho):
 
 
 def tingjip(request):
-    return render(request, 'tsutsheh/tingjip.html')
+    title = tau_title('登入')
+    return render(request, 'tsutsheh/tingjip.html', {
+        'title': title,
+    })
