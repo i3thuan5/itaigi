@@ -215,14 +215,6 @@ def tsutsheh(request):
     })
 
 
-def jintsing(request):
-    title = tau_title('已寄認證信')
-    return render(request, 'tsutsheh/jintsing.html', {
-        'title': title,
-        'norobots': True,
-    })
-
-
 def tingjip(request):
     title = tau_title('登入')
     return render(request, 'tsutsheh/tingjip.html', {
