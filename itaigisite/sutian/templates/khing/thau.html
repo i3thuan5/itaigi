@@ -8,16 +8,17 @@
             
             <!--Mobile list items-->
             <ul class="navbar-nav d-md-none ms-auto d-block">
-                <!-- <li class="d-inline-block"><a class="nav-link" href="#!">登入/註冊</a></li> -->
+                <li class="d-inline-block"><a class="nav-link" href="{% url 'tsutsheh' %}">註冊</a></li>
                 <li class="d-inline-block dropdown">
-                    <button class="btn dropdown-toggle me-1 position-relative" type="button" id="thongti" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn dropdown-toggle me-1 position-relative" type="button"  data-bs-toggle="dropdown" aria-expanded="false" id="thongti">
                         <svg width="24" height="24">
                             <use href="#svg-bell"></use>
                         </svg>
-                        <span class="d-none d-md-inline-block">通知</span>
-                        <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
-                      </span>
+                        <span class="visually-hidden">通知</span>
+                        <!--New alerts-->
+                        <span class="position-absolute top-0 start-0 p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">有新通知</span>
+                        </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="thongti">
                         <span class="fw-bolder px-2">通知</span>
@@ -54,10 +55,10 @@
                 </li>
                 <li class="d-inline-block dropdown">
                     <button class="btn dropdown-toggle me-1" type="button" id="khautso" data-bs-toggle="dropdown" aria-expanded="false">
-                    <svg width="24" height="24">
-                        <use href="#svg-person-fill"></use>
-                    </svg>
-                    <span class="d-none d-md-inline-block">帳號</span>
+                        <svg width="24" height="24">
+                            <use href="#svg-person-fill"></use>
+                        </svg>
+                        <span class="visually-hidden">帳號</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="khautso">
                         <li><a class="dropdown-item" href="{% url 'khautso' %}">a8568730個人頁面</a></li>
@@ -70,11 +71,13 @@
                 </li>
             </ul>
             <!--Mobile menu-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#tolam" aria-controls="tolam" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#tolam" aria-controls="tolam" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
                 </svg>
+                <span class="visually-hidden">主選單</span>
             </button>
+        <!--PC menu-->
         <nav id="tolam" class="navbar-collapse collapse">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="{% url 'tiann' %}">首頁</a></li>
@@ -82,18 +85,20 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'pokam' %}">台語寶鑑</a></li>
             </ul>
             <ul class="navbar-nav d-none d-md-block ms-auto">
-                <li class="d-inline-block"><a class="nav-link" href="#!">登入/註冊</a></li>
+                <li class="d-inline-block"><a class="nav-link" href="{% url 'tingjip' %}">登入</a></li>
+                <li class="d-inline-block"><a class="nav-link" href="{% url 'tsutsheh' %}">註冊</a></li>
                 <li class="d-inline-block dropdown">
-                    <button class="btn dropdown-toggle me-1 position-relative" type="button" id="thongti" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn dropdown-toggle me-1 position-relative" type="button"  data-bs-toggle="dropdown" aria-expanded="false" id="thongti-pc">
                         <svg width="24" height="24">
                             <use href="#svg-bell"></use>
                         </svg>
-                        通知
-                        <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
-                      </span>
+                        <span>通知</span>
+                        <!--New alerts-->
+                        <span class="position-absolute top-0 start-0 p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">有新通知</span>
+                        </span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="thongti">
+                    <div class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="thongti-pc">
                         <span class="fw-bolder px-2">通知</span>
                         <hr class="dropdown-divider">
                         <ul class="list-group list-group-flush" style="width: 50vw;max-height: 50vh; overflow-y: scroll;">
@@ -127,13 +132,13 @@
                     </div>
                 </li>
                 <li class="d-inline-block dropdown">
-                    <button class="btn dropdown-toggle me-1" type="button" id="khautso" data-bs-toggle="dropdown" aria-expanded="false">
-                    <svg width="24" height="24">
-                        <use href="#svg-person-fill"></use>
-                    </svg>
-                    帳號
+                    <button class="btn dropdown-toggle me-1" type="button" id="khautso-pc" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg width="24" height="24">
+                            <use href="#svg-person-fill"></use>
+                        </svg>
+                        <span>帳號</span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="khautso">
+                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="khautso-pc">
                         <li><a class="dropdown-item" href="{% url 'khautso' %}">a8568730個人頁面</a></li>
                         <li><a class="dropdown-item" href="{% url 'mng' %}">我的發問</a></li>
                         <li><a class="dropdown-item" href="{% url 'tap' %}">我的回答</a></li>
