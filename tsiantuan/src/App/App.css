@@ -68,7 +68,7 @@ body {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.57);
   }
 }
-@import url(//tauhu.tw/tauhu-oo.css);
+@import url(https://tauhu.tw/tauhu-oo.css);
 
 body, h2,
 h2.ui.header,
