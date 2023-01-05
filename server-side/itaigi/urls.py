@@ -49,7 +49,7 @@ def pangboo(request, status, title, image):
 
 def kithann(request, exception=None):
     return pangboo(
-        request, status=404,
+        request, status=200,
         title='iTaigi 愛台語',
         image='https://g0v.github.io/itaigi/design/logo_og.png',
     )
