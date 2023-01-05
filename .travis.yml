@@ -1,20 +1,20 @@
 sudo: false
-language: node_js
-node_js:
-- '15'
-env:
-- TSI2_LING7='build'
+install:
+- pip install tox
+- sudo apt-get install libsndfile1
 script:
-- echo npm run $TSI2_LING7
-- npm run $TSI2_LING7
-before_deploy:
-- npm run build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token:
-    secure: tAf1NUU38QfiP0GWe76HdTf9jPYhtw+/t1582Q0762hRuU00SWrYR+t5CAr3uQ+tM5jBHFIMG9yvyZAo61J6Bw0neEvWHmPWthPKd2iIURkTfvaV8WmP90MXwrLKSZAjJPGEFVbMq0FJO+6ZZt2Vk7cXYxG0142jzW+uY+Q4g7mQNZgiRdT1NGEWmXtIg7NHLIXgkB0acs9/zbsj4bzj8Bsc7vyYVdaXgYYk5DsvhmZKJh8lPI2WMd+8aBNHhD2CTRlZqdAhHHO3+YnKZN/VJmB7hhxzhD2Kgj+AduAS6dVXmTs24s9GYLmcHXMzTMkzQUkxMCJl1NFBgq4KHEQcKWNsItPlm7MlsPe3ZFK4klEJq5KIBLqUxWtZUzFy2DYmra2R77Q5IcGMVN8sqkAqjYeKU67oMxKbn6W1WQ8M1Fw65Ily185/XBPK2Qh8YU3ekcOP17KmIFxUkC8omi1XL9ByngUfoqS7lnMEJHr7sWdM89dtRQJ7lWXCILUnBuUeY2Uqfl9XXtYjFolQoWzpUXa7j+IuAjXAQ4m2BQLjWuHh4IlHAVTf67DM2ZuTUeY3tTebPeVwNvFCJurfQ1ej3OnCpb9qphOcilUbj7DQQbq9cF7xABWv2HpU56jFaIQhTKJ0l1nQITgaCUBxG/AHWXHjgmLpTSeZq6/caLgcDh0=
-  local_dir: build/
-  name: iTaiGi Auto Deploy Bot
-  on:
-    all_branches: true
+- tox -e $TOX_ENV
+jobs:
+  include:
+    - name: "checkmigrations"
+      env: TOX_ENV=checkmigrations
+    - name: "flake8"
+      env: TOX_ENV=flake8
+    - name: "npm build"
+      language: node_js
+      node_js:
+        - '16'
+      install:
+        - npm install
+      script:
+        - npm run build
