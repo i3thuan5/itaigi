@@ -3,7 +3,7 @@ os: linux
 dist: focal
 language: python
 python:
-- '3.8'
+- '3.6'
 install:
 - pip install tox
 - sudo apt-get install libsndfile1
