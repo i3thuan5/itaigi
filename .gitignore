@@ -11,10 +11,8 @@ db.sqlite3
 .project
 .pydevproject
 
-package-lock.json
 .settings
 *.sql.gz
 .idea
-yarn.lock
 .DS_Store
 
