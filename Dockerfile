@@ -4,6 +4,7 @@ COPY tsiantuan/package.json .
 COPY tsiantuan/package-lock.json .
 RUN npm ci
 COPY tsiantuan/ .
+RUN sed 's+https://itaigi.tw/+/+g' -i src/後端.jsx
 RUN npm run build
 
 FROM python:3.6-buster
