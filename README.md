@@ -80,6 +80,9 @@ $ nvm use 6
 
 [Wiki](https://github.com/g0v/itaigi/wiki)
 
+```
+ zcat TSULIAUKHOO.sql.gz | docker-compose exec -T pgsql psql -U postgres
+```
 
 License
 -----------
