@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   gunicorn:
-    build: server-side/
+    build: ./
     networks:
       - default
       - nginx-bridge
@@ -21,11 +21,11 @@ services:
     volumes:
       - pgsql_data:/var/lib/postgresql/data
   celery_beat:
-    build: server-side/
+    build: ./
     command: celery -A itaigi beat -l info
     restart: always
   celery:
-    build: server-side/
+    build: ./
     command: celery -A itaigi worker -l info
     restart: always
   rabbitmq:
