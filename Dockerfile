@@ -13,9 +13,9 @@ RUN apt-get update && \
   apt-get install -y locales zlib1g-dev libffi-dev libxml2-dev libxslt1-dev rabbitmq-server # 為了編譯, 連google oauth2, message queue
 
 WORKDIR /opt
-COPY requirements.txt .
+COPY server-side/requirements.txt .
 RUN pip install -r requirements.txt
-COPY . .
+COPY server-side/ .
 RUN python manage.py collectstatic --no-input
 COPY --from=tsiantuan /assets/build/ whitenoise_static
 
