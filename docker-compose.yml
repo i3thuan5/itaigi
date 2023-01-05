@@ -10,6 +10,7 @@ services:
       VIRTUAL_HOST: ${DEPLOY_HOST:-itaigi.tw}
       LETSENCRYPT_HOST: ${DEPLOY_HOST:-itaigi.tw}
       LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   pgsql:
     image: postgres:13
@@ -23,10 +24,14 @@ services:
   celery_beat:
     build: ./
     command: celery -A itaigi beat -l info
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   celery:
     build: ./
     command: celery -A itaigi worker -l info
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   rabbitmq:
     image: rabbitmq:3-management
