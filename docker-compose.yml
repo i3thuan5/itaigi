@@ -45,5 +45,3 @@ volumes:
 networks:
   nginx-bridge:
     external: true
-
- 
