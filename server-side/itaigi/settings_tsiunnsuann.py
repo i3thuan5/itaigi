@@ -1,7 +1,7 @@
 import os
 from .settings import * # noqa
 
-VIRTUAL_HOST = os.getenv('VIRTUAL_HOST').split(',')
+DEPLOY_HOST = os.getenv('DEPLOY_HOST').split(',')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False
@@ -16,7 +16,7 @@ SESSION_COOKIE_SAMESITE = 'Strict'
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_HTTPONLY = True
 
-if os.getenv('SSL_REDIRECT', default=True) and VIRTUAL_HOST != ['localhost']:
+if os.getenv('SSL_REDIRECT', default=True) and DEPLOY_HOST != ['localhost']:
     # Tsi̍t-pîng要求HTTPS，因為localhost開發時袂按呢做，所以開發時關--起-來。
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
