@@ -17,7 +17,7 @@ COPY server-side/requirements.txt .
 RUN pip install -r requirements.txt
 COPY server-side/ .
 RUN python manage.py collectstatic --no-input
-COPY --from=tsiantuan /assets/build/ whitenoise_static
+COPY --from=tsiantuan /assets/build/ whitenoise_static/tsiantuan/
 
 EXPOSE 8000
 CMD gunicorn -b 0.0.0.0:8000 \
