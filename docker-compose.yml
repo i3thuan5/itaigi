@@ -7,8 +7,8 @@ services:
       - default
       - nginx-bridge
     environment:
-      VIRTUAL_HOST: "itaigi.tw"
-      LETSENCRYPT_HOST: "itaigi.tw"
+      VIRTUAL_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      LETSENCRYPT_HOST: ${DEPLOY_HOST:-itaigi.tw}
       LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
     restart: always
   pgsql:
