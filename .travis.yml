@@ -11,8 +11,8 @@ script:
 - tox -e $TOX_ENV
 jobs:
   include:
-    - name: "checkmigrations"
-      env: TOX_ENV=checkmigrations
+    - name: "django settings"
+      env: TOX_ENV=django-settings
     - name: "flake8"
       env: TOX_ENV=flake8
     - name: "npm build"
