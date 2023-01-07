@@ -1,5 +1,3 @@
-警告: 此為舊專案，目前已遷到新專案[i3thuan5/itaigi](https://github.com/i3thuan5/itaigi) ，由工程團隊支付Travis CI自動化測試費用並維護專案。
-
 <a href="https://itaigi.tw/"><img src="https://raw.githubusercontent.com/g0v/itaigi/master/design/logo.svg" width="100"></a>
 iTaigi 愛台語
 ===========
@@ -82,6 +80,9 @@ $ nvm use 6
 
 [Wiki](https://github.com/g0v/itaigi/wiki)
 
+```
+ zcat TSULIAUKHOO.sql.gz | docker-compose exec -T pgsql psql -U postgres
+```
 
 License
 -----------

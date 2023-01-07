@@ -20,6 +20,7 @@ jobs:
       node_js:
         - '16'
       install:
+        - cd tsiantuan/
         - npm ci
       script:
         - npm run build

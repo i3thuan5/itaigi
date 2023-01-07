@@ -47,24 +47,9 @@ export default class FBTest extends React.Component {
   renderFacebookResponse() {
     return (
     <div className='kong content'>
-      <div className='ui basic segment'>
-      <div className='ui middle aligned stackable grid container'>
-        <div className='row'>
-          <div className='eight wide column'>
-            <h1 className='ui header'>快分享 iTaigi 給你的朋友知道吧！</h1>
-            <分享鍵 size='large' pathname={ '' }/>
-          </div>
-
-          <div className='eight wide right floated column'>
-            <a href='//facebook.com/1730736483875375' target='_blank'>
-              <img width='480px' style={{ maxWidth: '100%' }} src={
-              'https://s3-ap-southeast-1.amazonaws.com/' +
-              'itaigi.tw/images/footer.png'}/>
-            </a>
-          </div>
-
-        </div>
-        </div>
+      <div className='ui basic segment container'>
+        <h1 className='ui header'>快分享 iTaigi 給你的朋友知道吧！</h1>
+        <分享鍵 size='large' pathname={ '' }/>
       </div>
       <br/>
     </div>

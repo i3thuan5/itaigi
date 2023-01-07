@@ -1,5 +1,0 @@
-Django<3.2
-
-
-behave
-behave-django
