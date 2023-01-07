@@ -10,7 +10,9 @@ from 臺灣言語平臺.項目模型 import 平臺項目表
 
 def 走匯外來詞():
     sheet表內底資料 = []
-    with open(join(dirname(__file__), '語料', '臺灣閩南語常用詞辭典-外來詞-glll4678整理.csv')) as 檔案:
+    with open(join(
+        dirname(__file__), '語料', '臺灣閩南語常用詞辭典-外來詞-glll4678整理.csv'
+    )) as 檔案:
         標題, *內容 = csv.reader(檔案)
         for 一逝 in 內容:
             if len(''.join(一逝).strip()) == 0:
