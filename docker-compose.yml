@@ -10,11 +10,12 @@ services:
       VIRTUAL_HOST: ${DEPLOY_HOST:-itaigi.tw}
       LETSENCRYPT_HOST: ${DEPLOY_HOST:-itaigi.tw}
       LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+      DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   postgres:
     image: postgres:15
-    command: postgres -c 'shared_buffers=256MB' -c 'max_connections=300'
-    shm_size: '256mb'
+    shm_size: '1gb'
     restart: always
     environment:
       POSTGRES_PASSWORD: itaigi
@@ -23,10 +24,16 @@ services:
   celery_beat:
     build: ./
     command: celery -A itaigi beat -l info
+    environment:
+      DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   celery:
     build: ./
     command: celery -A itaigi worker -l info
+    environment:
+      DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   rabbitmq:
     image: rabbitmq:3-management
