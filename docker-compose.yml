@@ -13,8 +13,8 @@ services:
       DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
       SECRET_KEY: ${SECRET_KEY}
     restart: always
-  pgsql:
-    image: postgres:13
+  postgres:
+    image: postgres:15
     shm_size: '1gb'
     restart: always
     environment:
