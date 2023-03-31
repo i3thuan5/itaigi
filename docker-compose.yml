@@ -25,7 +25,7 @@ services:
       - pgsql_data:/var/lib/postgresql/data
   celery_beat:
     build: ./
-    command: celery -A itaigi beat -l info
+    command: celery -A itaigi beat -l info --pidfile=
     environment:
       DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
       SECRET_KEY: ${SECRET_KEY}
