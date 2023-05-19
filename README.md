@@ -14,6 +14,8 @@ iTaigi 愛台語
 * [專案Hackpad](https://g0v.hackpad.tw/moed7ct-taigi-neologism)
 * [API介面](http://docs.tai5uan5gian5gi2phing5thai5.apiary.io/#)
 * [正規化工作表](https://docs.google.com/spreadsheets/d/1_sXX2CGJsfSUTg-r-RGc4ApU1fPUmuLc2DmUSy4y_Zk)
+* [例句API](https://github.com/i3thuan5/itaigi-LeKu)
+* [名姓API](https://github.com/i3thuan5/itaigi-MiaSenn)
 
 ### Run
 
