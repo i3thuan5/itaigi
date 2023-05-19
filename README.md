@@ -86,6 +86,18 @@ $ nvm use 6
  zcat TSULIAUKHOO.sql.gz | docker-compose exec -T postgres psql -U postgres
 ```
 
+## 更新、上線
+Tī`KauIokPoo-SuTian-TsiunnSuann`專案，
+```bash
+git pull
+docker-compose build --pull
+docker-compose pull
+docker-compose up -d
+docker-compose exec gunicorn python manage.py migrate
+```
+Hó-sè.
+
+
 License
 -----------
 
