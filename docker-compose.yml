@@ -46,6 +46,29 @@ services:
     volumes:
       - rabbit_data:/var/lib/rabbitmq
     restart: always
+  miasenn:
+    image: ithuan/itaigi:miasenn
+    command: gunicorn miasenn.wsgi --log-level debug -b 0.0.0.0:8000
+    networks:
+      - nginx-bridge
+    environment:
+      VIRTUAL_HOST: "miasenn.itaigi.tw"
+      LETSENCRYPT_HOST: "miasenn.itaigi.tw"
+      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    restart: always
+  leku:
+    image: ithuan/itaigi:leku
+    command: gunicorn hok8bu7.wsgi --log-level debug -b 0.0.0.0:8000
+    networks:
+      - nginx-bridge
+    expose:
+      - 8000
+    environment:
+      VIRTUAL_HOST: "leku.itaigi.tw"
+      LETSENCRYPT_HOST: "leku.itaigi.tw"
+      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    restart: always
+
 
 volumes:
   pgsql_data:
