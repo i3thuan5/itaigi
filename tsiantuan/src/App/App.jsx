@@ -60,6 +60,20 @@ export default class App extends React.Component {
       <header className='app header'>
         <ToLam pathname={this.props.location.pathname}/>
       </header>
+      <div className='app bar container sprint'>
+        <div className='sprint'>
+          <h2>itaigi改版訪談邀請</h2>
+          <p>
+            你好，我們是itaigi維護團隊——意傳科技，itaigi除了現有功能外，我們想要改版、另外增加服務，所以想收集大家意見。
+          </p>
+          <p>
+            我們預計在8/17（四）邀請大家來Google Meet一對一訪談，訪談時間30分鐘，讓我們能了解大家使用狀況。
+          </p>
+          <button className="ui primary button">
+            Save
+          </button>
+        </div>
+      </div>
         { React.cloneElement(
           this.props.children,
           {

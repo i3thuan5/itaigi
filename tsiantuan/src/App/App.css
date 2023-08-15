@@ -16,6 +16,12 @@ body {
   margin: 0 auto;
 }
 
+.app .container.sprint {
+  background-color: red;
+  padding: 1rem;
+}
+
+
 .app .main.container {
   display: flex;
   flex-flow: row wrap;
