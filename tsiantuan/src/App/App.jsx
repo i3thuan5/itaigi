@@ -57,7 +57,9 @@ export default class App extends React.Component {
 
   sprint_googleform(外語) {
     gaSprintTiam();
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
+    window.open(
+      'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
+    );
   }
 
   render() {
