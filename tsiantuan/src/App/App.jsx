@@ -70,7 +70,7 @@ export default class App extends React.Component {
             我們預計在8/17（四）邀請大家來Google Meet一對一訪談，訪談時間30分鐘，讓我們能了解大家使用狀況。
           </p>
           <button className="ui primary button">
-            Save
+            到Google Form報名
           </button>
         </div>
       </div>

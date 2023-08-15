@@ -17,7 +17,9 @@ body {
 }
 
 .app .container.sprint {
-  background-color: red;
+  background-color: rgb(207, 229, 229);
+  border: 1px solid;
+  border-color: rgb(183, 216, 215);
   padding: 1rem;
 }
 
