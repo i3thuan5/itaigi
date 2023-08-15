@@ -53,6 +53,10 @@ export default class App extends React.Component {
     this.查怎樣講(外語);
   }
 
+  sprint_googleform(外語) {
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
+  }
+
   render() {
     const { k, han, lo } = this.props.params;
     return (
@@ -69,7 +73,10 @@ export default class App extends React.Component {
           <p>
             我們預計在8/17（四）邀請大家來Google Meet一對一訪談，訪談時間30分鐘，讓我們能了解大家使用狀況。
           </p>
-          <button className="ui primary button">
+          <button
+            className="ui primary button"
+            onClick={this.sprint_googleform.bind(this)}
+          >
             到Google Form報名
           </button>
         </div>
