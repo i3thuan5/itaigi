@@ -9,6 +9,7 @@ import './App.css';
 
 import { Promise } from 'bluebird';
 import { browserHistory } from 'react-router';
+import { gaSprintKhuann, gaSprintTiam } from '../GA'
 
 var superagent = require('superagent-promise')(require('superagent'), Promise);
 import Debug from 'debug';
@@ -19,6 +20,7 @@ export default class App extends React.Component {
     super(props);
     this.state = { csrftoken: '', 編號: '無登入' };
     this.看編號();
+    gaSprintKhuann();
   }
 
   看編號() {
@@ -54,6 +56,7 @@ export default class App extends React.Component {
   }
 
   sprint_googleform(外語) {
+    gaSprintTiam();
     window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
   }
 

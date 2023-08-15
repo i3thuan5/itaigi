@@ -26,3 +26,15 @@ export const gaUaGi = (su) => {
     event_label: su,
   });
 };
+
+export const gaSprintKhuann = () => {
+  gtag('event', 'sprint-khuann', {
+    event_category: 'engagement',
+  });
+};
+
+export const gaSprintTiam = () => {
+  gtag('event', 'sprint-tiam', {
+    event_category: 'engagement',
+  });
+};
