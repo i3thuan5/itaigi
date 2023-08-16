@@ -72,12 +72,10 @@ export default class GuaGi extends React.Component {
         </h2>
         想盡早知道「{this.props.華語關鍵字}」更多台語講法，你可以：
         <h3>
-          <i className='bullhorn icon'></i>
           註冊並關注
         </h3>
         <p>
-          <i className="sign in  icon"></i>為什麼要註冊？<br/>
-          為了讓iTaigi不被廣告、機器人打擾，需要大家註冊再使用。
+          為什麼要註冊？為了讓iTaigi不被廣告、機器人打擾，需要大家註冊再使用。
         </p>
         <button
           className="ui teal button"
@@ -106,7 +104,7 @@ export default class GuaGi extends React.Component {
           <div className='ui su card'>
             <div className='content'>
               <h2 className='ui header'>
-                <i className='cloud upload icon'></i>
+                <i className='pencil alternate icon'></i>
                 貢獻講法
               </h2>
               <ABo 華語關鍵字={this.props.華語關鍵字}

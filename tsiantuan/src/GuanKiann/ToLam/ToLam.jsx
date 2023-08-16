@@ -24,13 +24,13 @@ export default class ToLam extends React.Component {
       </div>
       <div className='ui labeled icon menu'>
       <Link className={menu_item_class('/k')} to='/k'>
-          <i className="sound icon"></i>查辭典
+          <i className="search icon"></i>查辭典
         </Link> 
        {/*<Link className={menu_item_class('/name')} to='/name'>
           <i className="question icon"></i>查名字
         </Link>*/}
         <Link className={menu_item_class('/t')} to='/t'>
-          <i className="unmute icon"></i>貢獻辭典
+          <i className="pencil alternate icon"></i>貢獻辭典
         </Link>
         <Link className={menu_item_class('/tsu-te')} to='/tsu-te'>
           <i className="icon"><img src={Dictionary}/></i>台語寶鑑
