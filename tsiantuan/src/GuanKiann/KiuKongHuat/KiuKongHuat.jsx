@@ -37,18 +37,55 @@ export default class KiuKongHuat extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
+  tsusun_kaisiau() {
+    window.open(
+      'https://calendly.com/itaigi/30min'
+    );
+  }
   render() {
     let { 華語關鍵字 } = this.props;
     return (
       <div>
-        <h3 className='ui horizontal divider header'>
-          <i className='cloud upload icon'></i>
-          我想欲知影按怎講
+        <h2 className='ui header'>
+          <i className='child icon'></i>
+          知道更多講法
+        </h2>
+        如果還想知道「{this.props.華語關鍵字}」的講法，你可以：
+        <h3>
+          <i className='bullhorn icon'></i>
+          註冊並公開發問
         </h3>
-        <button className='ui button large olive' onClick={this.問外語.bind(this)}>
-          <i className='student icon'></i>
-          求講法
+        <p>
+          <i className="sign in  icon"></i>為什麼要註冊？<br/>
+          為了讓iTaigi不被廣告、機器人打擾，需要大家註冊再使用。
+        </p>
+        <button
+          className="ui green button"
+          onClick={this.問外語.bind(this)}
+        >
+          註冊並公開發問
         </button>
+
+              <h3>
+                <i className='comments icon'></i>
+                1對1台語諮詢
+              </h3>
+              <p>
+                如果還想知道「{this.props.華語關鍵字}」其他補充資料，iTaigi提供1對1台語諮詢服務，可以問像是工作上的應答、生活情況、文字翻譯……，30分鐘不限主題讓你問到飽！
+              </p>
+              <div
+                className="ui button labeled"
+              >
+                <a className="ui basic label">
+                  NT$1,000 / 30分鐘
+                </a>
+                <div
+                  className="ui green button"
+                  onClick={this.tsusun_kaisiau.bind(this)}
+                >
+                  立即預約諮詢
+                </div>
+              </div>
         <SangTshut modalIsOpen={this.state.modalIsOpen}
           closeModal={this.closeModal.bind(this)}/>
       </div>

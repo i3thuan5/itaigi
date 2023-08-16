@@ -67,13 +67,12 @@ class Su extends React.Component {
       <div className='content'>
         <div className='left floated'>
           <h2 className='ui header'>
-          {suText}
+          {suImText}
           </h2>
         </div>
         <HuatIm 音標={suIm} hanji={suText}/>
-        <例句鈕仔 來開例句={this.props.來開例句.bind(this)} />
         <div className='description'>
-          {suImText}
+          {suText}
           <LaiLik 貢獻者={貢獻者} />
           華語：
           <span className='ui horizontal list large'>
@@ -81,32 +80,14 @@ class Su extends React.Component {
           </span>
         </div>
         <br/>
-        <div className='ui compact menu large'>
-          <a className={
-            'item'
-            + (this.state.voted ? ' disabled' : '')}
+        <div className="ui labeled button" tabindex="0">
+          <div
+            className={ "ui button" + (this.state.voted ? ' disabled' : '')}
             onClick={this.投票.bind(this, '按呢講好')}>
-            <i className='icon heart'></i>
-            按呢講好 <span className='floating ui label yellow'>{this.state.按呢講好 || 按呢講好}</span>
-          </a>
-          <a className={
-            'item'
-            + (this.state.voted ? ' disabled' : '')}
-            onClick={this.投票.bind(this, '按呢無好')}>
-            <i className='icon help circle'></i>
-            按呢怪怪 <span className='floating ui label orange'>{this.state.按呢無好 || 按呢無好}</span>
-          </a>
-        </div>
-        <div className='report'>
-          <a onClick={
-            () => {
-              let appVersion = navigator.appVersion;
-              let d = new Date();
-              let n = d.toISOString();
-              console.log('這條沒聲音\n' + '時間：' + n + '\n' + 'appVersion: ' + appVersion);
-            }
-          }>
-            🙋 這條沒聲音
+            <i className="thumbs up icon"></i>我喜歡這講法
+          </div>
+          <a className="ui basic red left pointing label">
+            {this.state.按呢講好 || 按呢講好}
           </a>
         </div>
       </div>
