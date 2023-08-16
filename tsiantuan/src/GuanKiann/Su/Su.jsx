@@ -73,7 +73,7 @@ class Su extends React.Component {
         <HuatIm 音標={suIm} hanji={suText}/>
         <div className='description'>
           {suText}
-          <LaiLik 貢獻者={貢獻者} />
+          <LaiLik 貢獻者={貢獻者} guagi={this.props.華語關鍵字}/>
           華語：
           <span className='ui horizontal list large'>
             {按呢講的外語}

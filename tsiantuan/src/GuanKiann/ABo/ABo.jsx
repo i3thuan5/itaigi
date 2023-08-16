@@ -134,6 +134,14 @@ export default class ABo extends React.Component {
                 </div>
             </div>
             <div className='field'>
+                <label>理由（從長輩聽來、簡述個人發想、……）</label>
+                <div className='abo ui input large'>
+                <input placeholder='聯想到某個東西所以貢獻這說法' type='text'
+                    value={this.state.音標}
+                    onChange={this.handle音標KeyUp.bind(this)}/>
+                </div>
+            </div>
+            <div className='field'>
               <label for="cc">
                   <input type='checkbox' id="cc"/> 
                   &nbsp;我同意內容以
