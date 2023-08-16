@@ -25,6 +25,13 @@ class 新詞區塊 extends React.Component {
           <div className='ui text loader'>小等一下</div>
         </div>
         <span className={`header large ${loading ? 'loading' : ''}`}></span>
+        <Link
+          className='ui black large button'
+          style={{ marginBottom: '0.25em' }}
+          to='/k/%e5%a5%87%e7%95%b0%e6%9e%9c'
+          key='200'>
+          奇異果
+        </Link>
         {
           this.props.newWords.map(function (su, i) {
             return (
