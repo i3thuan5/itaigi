@@ -34,6 +34,7 @@ export default class GuaGi extends React.Component {
       csrftoken={this.props.csrftoken}
       來開例句={來開例句}
       variables={{ 詞 }}
+      華語關鍵字={this.props.華語關鍵字}
       renderLoading={this.詞載入中(詞, 來開例句)} />;
   }
 
