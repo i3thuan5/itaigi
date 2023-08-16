@@ -11,7 +11,7 @@ var debug = Debug('itaigi:Kong有講法');
 export default class 有講法 extends React.Component {
   tsusun_kaisiau() {
     window.open(
-      'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
+      'https://calendly.com/itaigi/30min'
     );
   }
   render() {
