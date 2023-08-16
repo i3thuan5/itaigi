@@ -20,7 +20,6 @@ export default class App extends React.Component {
     super(props);
     this.state = { csrftoken: '', 編號: '無登入' };
     this.看編號();
-    gaSprintKhuann();
   }
 
   看編號() {
@@ -55,13 +54,6 @@ export default class App extends React.Component {
     this.查怎樣講(外語);
   }
 
-  sprint_googleform(外語) {
-    gaSprintTiam();
-    window.open(
-      'https://calendly.com/bunli/30min?month=2023-09&date=2023-09-08'
-    );
-  }
-
   render() {
     const { k, han, lo } = this.props.params;
     return (
@@ -79,10 +71,9 @@ export default class App extends React.Component {
             我們預計在9/8（五）到9/9（六）邀請大家來Google Meet一對一訪談，訪談時間30分鐘，讓我們能了解大家使用狀況。
           </p>
           <button
-            className="ui primary button"
-            onClick={this.sprint_googleform.bind(this)}
+            className="ui primary button disabled"
           >
-            到Calendly直接挑選方便訪談的時間
+            報名額滿，感謝大家
           </button>
         </div>
       </div>
