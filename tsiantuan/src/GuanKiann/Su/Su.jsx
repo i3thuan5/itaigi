@@ -80,13 +80,14 @@ class Su extends React.Component {
           </span>
         </div>
         <br/>
-        <div className='ui compact menu large'>
-          <a className={
-            'item'
-            + (this.state.voted ? ' disabled' : '')}
+        <div className="ui labeled button" tabindex="0">
+          <div
+            className={ "ui button" + (this.state.voted ? ' disabled' : '')}
             onClick={this.投票.bind(this, '按呢講好')}>
-            <i className='icon heart'></i>
-            按呢講好 <span className='floating ui label yellow'>{this.state.按呢講好 || 按呢講好}</span>
+            <i className="thumbs up icon"></i>我喜歡這講法
+          </div>
+          <a className="ui basic red left pointing label">
+            {this.state.按呢講好 || 按呢講好}
           </a>
         </div>
       </div>
