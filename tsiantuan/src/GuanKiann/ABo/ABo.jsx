@@ -118,19 +118,19 @@ export default class ABo extends React.Component {
     return (
         <div className='ui form'>
             <div className='field'>
-                <label>臺語漢字</label>
-                <div className='abo ui input large'>
-                <input placeholder='臺語漢字' type='text'
-                    value={this.state.漢字}
-                    onChange={this.handle漢字KeyUp.bind(this)}/>
-                </div>
-            </div>
-            <div className='field'>
-                <label>台羅</label>
+                <label>教育部羅馬字</label>
                 <div className='abo ui input large'>
                 <input placeholder='台羅' type='text'
                     value={this.state.音標}
                     onChange={this.handle音標KeyUp.bind(this)}/>
+                </div>
+            </div>
+            <div className='field'>
+                <label>漢羅</label>
+                <div className='abo ui input large'>
+                <input placeholder='臺語漢字' type='text'
+                    value={this.state.漢字}
+                    onChange={this.handle漢字KeyUp.bind(this)}/>
                 </div>
             </div>
             <div className='field'>
