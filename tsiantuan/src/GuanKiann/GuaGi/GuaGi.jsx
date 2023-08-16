@@ -63,18 +63,6 @@ export default class GuaGi extends React.Component {
       <div className='ui su vertical segment'>
         <div className='ui stackable cards'>
           {suList}
-          <div className='ui su card'>
-            <div className='content'>
-              <h3 className='ui header'>
-                <i className='cloud upload icon'></i>
-                閣會使按呢講
-              </h3>
-              <ABo 華語關鍵字={this.props.華語關鍵字}
-               csrftoken={this.props.csrftoken}
-               編號={this.props.編號} 漢字={this.props.漢字} 音標={this.props.音標}
-               />
-            </div>
-          </div>
 
           <div className='ui su card'>
             <div className='content'>
@@ -118,6 +106,18 @@ export default class GuaGi extends React.Component {
             </div>
           </div>
 
+          <div className='ui su card'>
+            <div className='content'>
+              <h3 className='ui header'>
+                <i className='cloud upload icon'></i>
+                貢獻講法
+              </h3>
+              <ABo 華語關鍵字={this.props.華語關鍵字}
+               csrftoken={this.props.csrftoken}
+               編號={this.props.編號} 漢字={this.props.漢字} 音標={this.props.音標}
+               />
+            </div>
+          </div>
 
         </div>
       </div>

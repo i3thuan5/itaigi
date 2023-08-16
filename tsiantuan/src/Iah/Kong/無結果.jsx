@@ -31,7 +31,7 @@ export default class 無結果 extends React.Component {
               <div className='content'>
                 <h3 className='ui horizontal divider header'>
                   <i className='cloud upload icon'></i>
-                  我會曉，會使按呢講
+                  貢獻講法
                 </h3>
                 <ABo 華語關鍵字={this.props.華語關鍵字}
                   csrftoken={this.props.csrftoken}
