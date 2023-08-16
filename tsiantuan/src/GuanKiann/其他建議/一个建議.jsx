@@ -20,13 +20,12 @@ class 一个建議 extends React.Component {
       <div className='content'>
         <div className='left floated'>
           <h2 className='ui header'>
-          {文本資料}
+          {音標資料}
           </h2>
         </div>
         <HuatIm 音標={音標資料} />
-        <例句鈕仔 來開例句={this.props.來開例句.bind(this)} />
         <div className='description'>
-          {音標資料}<br/>
+          {文本資料}<br/>
           華語：
           <span className='ui horizontal list large'>
             {按呢講的外語}
