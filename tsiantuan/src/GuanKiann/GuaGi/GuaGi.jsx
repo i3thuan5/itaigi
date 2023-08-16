@@ -68,12 +68,12 @@ export default class GuaGi extends React.Component {
             <div className='content'>
         <h2 className='ui header'>
           <i className='child icon'></i>
-          知道更多講法
+          關注更多講法
         </h2>
-        如果還想知道「{this.props.華語關鍵字}」的講法，你可以：
+        想盡早知道「{this.props.華語關鍵字}」更多台語講法，你可以：
         <h3>
           <i className='bullhorn icon'></i>
-          再一次公開發問
+          註冊並關注
         </h3>
         <p>
           <i className="sign in  icon"></i>為什麼要註冊？<br/>
@@ -83,7 +83,7 @@ export default class GuaGi extends React.Component {
           className="ui green button"
           // onClick={this.問外語.bind(this)}
         >
-          註冊並再一次公開發問
+          註冊並關注
         </button>
 
               <h3>
@@ -103,7 +103,7 @@ export default class GuaGi extends React.Component {
                   className="ui green button"
                   onClick={this.tsusun_kaisiau.bind(this)}
                 >
-                  立即預約諮詢
+                  預約諮詢
                 </div>
               </div>
             </div>

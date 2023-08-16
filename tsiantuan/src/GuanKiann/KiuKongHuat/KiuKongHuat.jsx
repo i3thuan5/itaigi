@@ -83,7 +83,7 @@ export default class KiuKongHuat extends React.Component {
                   className="ui green button"
                   onClick={this.tsusun_kaisiau.bind(this)}
                 >
-                  立即預約諮詢
+                  預約諮詢
                 </div>
               </div>
         <SangTshut modalIsOpen={this.state.modalIsOpen}

@@ -31,7 +31,7 @@ export default class 有講法 extends React.Component {
               onClick={this.tsusun_kaisiau.bind(this)}
             >
               <i className="heart icon"></i>
-              立即預約諮詢
+              預約諮詢
             </div>
         </div>
       </div>
