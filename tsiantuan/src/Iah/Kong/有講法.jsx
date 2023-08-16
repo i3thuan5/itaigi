@@ -19,20 +19,13 @@ export default class 有講法 extends React.Component {
     <div className='kongHuat'>
       <div className='tsusun-kaisiau tsusunkaisiau'>
         <span>有任何對於台語的疑難雜症嗎？iTaigi提供1對1台語諮詢服務，30分鐘讓你問到飽！</span>
-
-          <div
-            className="ui button labeled"
-          >
-            <a className="ui basic label">
-              NT$1,000 / 30分鐘
-            </a>
+        <span style={{"marginRight": "20px"}}><b>NT$1,000 / 30分鐘</b></span>
             <div
               className="ui primary button"
               onClick={this.tsusun_kaisiau.bind(this)}
             >
-              <i className="heart icon"></i>
-              立即預約諮詢
-            </div>
+              預約諮詢
+            
         </div>
       </div>
       {this.props.內容.列表.map((g) => (

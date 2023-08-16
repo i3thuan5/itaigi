@@ -50,7 +50,7 @@ export default class Tshue extends React.Component {
     <div className='ui fluid action input huge container tshue'>
       <input
         type='text'
-        placeholder='輸入華語，按下「講台語」'
+        placeholder='輸入華語，例如「奇異果」'
         defaultValue={this.props.defaultValue}
         onKeyDown={this.handleKeyDown.bind(this)}
         ref='Tshue'
@@ -59,7 +59,7 @@ export default class Tshue extends React.Component {
       <div className='ui button huge teal'
         onClick={this.查怎樣講.bind(this)}>
         <i className='translate icon'></i>
-        講台語
+        查辭典
       </div>
     </div>
     );

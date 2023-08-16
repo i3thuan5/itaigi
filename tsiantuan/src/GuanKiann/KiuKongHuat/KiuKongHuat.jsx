@@ -73,18 +73,12 @@ export default class KiuKongHuat extends React.Component {
               <p>
                 如果還想知道「{this.props.華語關鍵字}」其他補充資料，iTaigi提供1對1台語諮詢服務，可以問像是工作上的應答、生活情況、文字翻譯……，30分鐘不限主題讓你問到飽！
               </p>
-              <div
-                className="ui button labeled"
-              >
-                <a className="ui basic label">
-                  NT$1,000 / 30分鐘
-                </a>
+              <span style={{"marginRight": "20px"}}><b>NT$1,000 / 30分鐘</b></span>
                 <div
-                  className="ui green button"
+                  className="ui primary button"
                   onClick={this.tsusun_kaisiau.bind(this)}
                 >
-                  立即預約諮詢
-                </div>
+                  預約諮詢
               </div>
         <SangTshut modalIsOpen={this.state.modalIsOpen}
           closeModal={this.closeModal.bind(this)}/>

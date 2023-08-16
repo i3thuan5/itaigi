@@ -97,13 +97,9 @@ export default class ABo extends React.Component {
 
   render無登入鈕仔() {
     return (
-      <div className='ui buttons'>
-        <button
-          className={ 'ui button large' + (this.state.送出中 ? ' disabled' : '') }
-          onClick={this.查怎樣講.bind(this)}>匿名送出</button>
-        <div className='or'></div>
+      <div>
         <form method='get' action={後端.登入() }>
-          <input type='submit' className='ui positive button large' value='登入 & 送出'/>
+          <input type='submit' className='ui teal button large' value='註冊登入並送出'/>
           <input type='hidden' name='next'
             value={'/%E5%B0%8E%E5%90%91?%E7%B6%B2%E5%9D%80='
               + '//itaigi.tw/k/' + this.props.華語關鍵字

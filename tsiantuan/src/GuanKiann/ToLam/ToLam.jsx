@@ -26,23 +26,23 @@ export default class ToLam extends React.Component {
       <Link className={menu_item_class('/k')} to='/k'>
           <i className="sound icon"></i>查辭典
         </Link> 
-       <Link className={menu_item_class('/name')} to='/name'>
+       {/*<Link className={menu_item_class('/name')} to='/name'>
           <i className="question icon"></i>查名字
-        </Link>
+        </Link>*/}
         <Link className={menu_item_class('/t')} to='/t'>
           <i className="unmute icon"></i>貢獻辭典
+        </Link>
+        <Link className={menu_item_class('/tsu-te')} to='/tsu-te'>
+          <i className="icon"><img src={Dictionary}/></i>台語寶鑑
         </Link>
         <Link className={menu_item_class('/mia')} to='/mia'>
           <i className="flag icon"></i>名人堂
         </Link>
-        <Link className={menu_item_class('/tsing')} to='/tsing'>
+        {/*<Link className={menu_item_class('/tsing')} to='/tsing'>
           <i className="student icon"></i>正規化團隊
-        </Link>
+        </Link>*/}
         <Link className={menu_item_class('/iong')} to='/iong'>
           <i className="configure icon"></i>好工具
-        </Link>
-        <Link className={menu_item_class('/tsu-te')} to='/tsu-te'>
-          <i className="icon"><img src={Dictionary}/></i>台語寶鑑
         </Link>
       </div>
       <div className="ui right item">
