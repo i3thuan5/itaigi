@@ -86,7 +86,7 @@ class Su extends React.Component {
             onClick={this.投票.bind(this, '按呢講好')}>
             <i className="thumbs up icon"></i>我喜歡這講法
           </div>
-          <a className="ui basic red left pointing label">
+          <a className="ui basic grey left pointing label">
             {this.state.按呢講好 || 按呢講好}
           </a>
         </div>
