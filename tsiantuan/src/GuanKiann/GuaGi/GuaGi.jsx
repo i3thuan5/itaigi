@@ -66,29 +66,32 @@ export default class GuaGi extends React.Component {
 
           <div className='ui su card'>
             <div className='content'>
-              <h3 className='ui header'>
-                <i className='cloud upload icon'></i>
-                知道更多講法
-              </h3>
-              如果還想知道「{this.props.華語關鍵字}」的其他講法，你可以：
-              <h4>註冊並公開發問</h4>
-              <p>
-                <i className="comment icon"></i>為什麼要註冊？<br/>
-                為了讓iTaigi不被廣告、機器人打擾，需要大家註冊再使用。
-              </p>
-              <button
-                className="ui green button"
-                // onClick={this.sprint_googleform.bind(this)}
-              >
-                註冊並公開發問
-              </button>
+        <h2 className='ui header'>
+          <i className='child icon'></i>
+          知道更多講法
+        </h2>
+        如果還想知道「{this.props.華語關鍵字}」的講法，你可以：
+        <h3>
+          <i className='bullhorn icon'></i>
+          再一次公開發問
+        </h3>
+        <p>
+          <i className="sign in  icon"></i>為什麼要註冊？<br/>
+          為了讓iTaigi不被廣告、機器人打擾，需要大家註冊再使用。
+        </p>
+        <button
+          className="ui green button"
+          // onClick={this.問外語.bind(this)}
+        >
+          註冊並再一次公開發問
+        </button>
 
-              <h3 className='ui header'>
-                <i className='cloud upload icon'></i>
+              <h3>
+                <i className='comments icon'></i>
                 1對1台語諮詢
               </h3>
               <p>
-                如果還想知道「{this.props.華語關鍵字}」的講法或其他補充資料，iTaigi提供1對1台語諮詢服務，可以問像是工作上的應答、生活情況、文字翻譯……，30分鐘不限主題讓你問到飽！
+                如果還想知道「{this.props.華語關鍵字}」其他補充資料，iTaigi提供1對1台語諮詢服務，可以問像是工作上的應答、生活情況、文字翻譯……，30分鐘不限主題讓你問到飽！
               </p>
               <div
                 className="ui button labeled"
@@ -108,10 +111,10 @@ export default class GuaGi extends React.Component {
 
           <div className='ui su card'>
             <div className='content'>
-              <h3 className='ui header'>
+              <h2 className='ui header'>
                 <i className='cloud upload icon'></i>
                 貢獻講法
-              </h3>
+              </h2>
               <ABo 華語關鍵字={this.props.華語關鍵字}
                csrftoken={this.props.csrftoken}
                編號={this.props.編號} 漢字={this.props.漢字} 音標={this.props.音標}
