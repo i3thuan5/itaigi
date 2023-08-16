@@ -44,6 +44,11 @@ export default class GuaGi extends React.Component {
         來開例句={來開例句}/>
       );
   }
+  tsusun_kaisiau() {
+    window.open(
+      'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
+    );
+  }
 
   render() {
     if (!this.props.新詞文本) {
@@ -68,6 +73,37 @@ export default class GuaGi extends React.Component {
                csrftoken={this.props.csrftoken}
                編號={this.props.編號} 漢字={this.props.漢字} 音標={this.props.音標}
                />
+            </div>
+          </div>
+          <div className='ui su card'>
+            <div className='content'>
+              <h3 className='ui header'>
+                <i className='cloud upload icon'></i>
+                更多講法：
+              </h3>
+              如果還想知道「{this.props.華語關鍵字}」的其他講法，你可以：
+              <h4>註冊並公開發問</h4>
+              <button
+                className="ui primary button"
+                // onClick={this.sprint_googleform.bind(this)}
+              >
+                註冊並公開發問
+              </button>
+              <h4>1對1台語諮詢</h4>
+
+              <div
+                className="ui button labeled"
+              >
+                <a className="ui basic label">
+                  NT$1,000 / 30分鐘
+                </a>
+                <div
+                  className="ui primary button"
+                  onClick={this.tsusun_kaisiau.bind(this)}
+                >
+                  立即預約諮詢
+                </div>
+            </div>
             </div>
           </div>
         </div>
