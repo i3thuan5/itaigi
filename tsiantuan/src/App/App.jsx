@@ -58,7 +58,7 @@ export default class App extends React.Component {
   sprint_googleform(外語) {
     gaSprintTiam();
     window.open(
-      'https://docs.google.com/forms/d/e/1FAIpQLSc4Q5HpkjtcN6hmig6nnwu6YuSwnL8Gy6yS7dImBs2kbS0Hsw/viewform'
+      'https://calendly.com/bunli/30min?month=2023-09&date=2023-09-08'
     );
   }
 
@@ -71,18 +71,18 @@ export default class App extends React.Component {
       </header>
       <div className='app bar container sprint'>
         <div className='sprint'>
-          <h2>itaigi改版訪談邀請</h2>
+          <h2>itaigi改版訪談邀請 Part 2</h2>
           <p>
-            你好，我們是itaigi維護團隊——意傳科技，itaigi除了現有功能外，我們想要改版、另外增加服務，所以想收集大家意見。
+            你好，我們是itaigi維護團隊——意傳科技，itaigi除了現有功能外，我們想要改版、另外增加服務，所以想請受訪者看看正在調整的新版iTaigi，幫助工程團隊察覺是否有改善，或者有其他問題。
           </p>
           <p>
-            我們預計在8/17（四）邀請大家來Google Meet一對一訪談，訪談時間30分鐘，讓我們能了解大家使用狀況。
+            我們預計在9/8（五）到9/9（六）邀請大家來Google Meet一對一訪談，訪談時間30分鐘，讓我們能了解大家使用狀況。
           </p>
           <button
             className="ui primary button"
             onClick={this.sprint_googleform.bind(this)}
           >
-            到Google Form報名
+            到Calendly直接挑選方便訪談的時間
           </button>
         </div>
       </div>
