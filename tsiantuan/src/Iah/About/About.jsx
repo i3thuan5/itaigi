@@ -8,9 +8,9 @@ class About extends React.Component {
       <div className='about'>
         <div className='ui very padded vertical segment'>
         <p className='ui header large'>
-          iTaigi 是 g0v 零時政府專案
+          iTaigi愛台語-華台群眾辭典是g0v零時政府專案
           <a target='_blank' href='https://moedict.tw'>「萌典」</a>
-          的延伸專案，想知道一個詞的台語怎麼說，來這裡查就對了！甚麼都可以查，但不一定查得到，查不到時可以發問，或者自己發明台語講法貢獻給大家，簡單說就是「自己的辭典自己編」。
+          的延伸辭典，想知道一個詞的台語怎麼說，來這裡查就對了！甚麼都可以查，但不一定查得到，查不到時可以發問，或者自己發明台語講法貢獻給大家，簡單說就是「自己的辭典自己編」。
         </p>
         <p className='ui header large'>
           以下簡單說明用法：
