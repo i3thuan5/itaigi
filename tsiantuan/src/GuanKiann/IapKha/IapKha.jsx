@@ -10,7 +10,7 @@ export default class IapKha extends React.Component {
           <section className="seven wide column left aligned">
             <h4>iTaigi愛台語</h4>
             <div>
-            <p>iTaigi愛台語-華台群眾辭典是 <a href="https://g0v.tw/" className="text-yellow">g0v 零時政府</a>專案「萌典」的延伸專案，想知道一個詞的台語怎麼說，來這裡查就對了！甚麼都可以查，但不一定查得到，查不到時可以發問，或者自己發明台語講法貢獻給大家，簡單說就是「自己的辭典自己編」。</p>
+            <p>iTaigi愛台語-群眾台語辭典是 <a href="https://g0v.tw/" className="text-yellow">g0v 零時政府</a>專案「萌典」的延伸專案，想知道一個詞的台語怎麼說，來這裡查就對了！甚麼都可以查，但不一定查得到，查不到時可以發問，或者自己發明台語講法貢獻給大家，簡單說就是「自己的辭典自己編」。</p>
             <p>程式授權 MIT，辭典內容CC0｢不保留權利｣授權。Powered by <a href="https://getbootstrap.com" className="text-yellow">BootStrap 5</a>.</p>
             </div>
           </section>
