@@ -9,7 +9,7 @@ class Hokbu extends React.Component {
     <h1>iTaigi服務條款</h1>
 <p>2022 年 1 月 1 日起生效</p>
 
-<p>您可以透過iTaigi公民華台辭典（以下簡稱iTaigi）捐出您回答的台語詞，好讓任何人都得以使用這個資料庫交流並學習台語詞彙。</p>
+<p>您可以透過iTaigi群眾台語辭典捐出您回答的台語詞，好讓任何人都得以使用這個資料庫交流並學習台語詞彙。</p>
 <p>您必須同意以下條款，方可加入 iTaigi 的行列。</p>
 
 <nav aria-labelledby="tiaukhuann-sohin">

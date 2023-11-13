@@ -48,7 +48,7 @@ export default class FBTest extends React.Component {
     return (
     <div className='kong content'>
       <div className='ui basic segment container'>
-        <h1 className='ui header'>快分享 iTaigi 給你的朋友知道吧！</h1>
+        <p className='ui header'>快分享 iTaigi 給你的朋友知道吧！</p>
         <分享鍵 size='large' pathname={ '' }/>
       </div>
       <br/>

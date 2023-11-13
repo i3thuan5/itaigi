@@ -9,7 +9,7 @@ class Unsu extends React.Component {
         
 <h1 className="ui header">iTaigi隱私權保護條款</h1>
 
-<p>iTaigi公民華台辭典（以下簡稱iTaigi）作為民眾查詢以及交流台語語詞之非盈利開源網站，iTaigi絕對遵守個人資料保護法及相關法令之規定，保護用戶的個人隱私權。為了協助您清楚地瞭解iTaigi如何蒐集、應用及保護您所提供的個人資料，請您詳細閱讀iTaigi隱私權保護政策。 </p>
+<p>iTaigi群眾台語辭典作為民眾查詢以及交流台語語詞之非盈利開源網站，iTaigi絕對遵守個人資料保護法及相關法令之規定，保護用戶的個人隱私權。為了協助您清楚地瞭解iTaigi如何蒐集、應用及保護您所提供的個人資料，請您詳細閱讀iTaigi隱私權保護政策。 </p>
 
 <nav aria-labelledby="tiaukhuann-sohin">
   <b id="tiaukhuann-sohin">隱私權保護條款索引</b>
