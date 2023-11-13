@@ -9,48 +9,6 @@ var superagent = require('superagent-promise')(require('superagent'), Promise);
 
 var debug = Debug('itaigi:Kong無關鍵字');
 
-class 新詞區塊 extends React.Component {
-  render() {
-    const loading = this.props.newWords.length === 0;
-
-    return (
-      <div>
-      <p></p>
-      <h3 className='ui horizontal divider header'>
-          <i className='ui icon rocket'/>燒燙燙 台語新詞
-      </h3>
-
-      <div className='ui inverted segment 燒燙燙'>
-        <div className={`ui ${loading ? 'active' : ''} dimmer`}>
-          <div className='ui text loader'>小等一下</div>
-        </div>
-        <span className={`header large ${loading ? 'loading' : ''}`}></span>
-        {
-          this.props.newWords.map(function (su, i) {
-            return (
-              <Link
-                className='ui black large button'
-                style={{ marginBottom: '0.25em' }}
-                to={'/k/' + su}
-                key={i}>
-                {su}
-              </Link>
-            );
-          }
-        )}
-        {this.props.isShowMore ? '' : (
-          <button
-            className={`${loading ? 'loading' : 'ui button  large'}`}
-            onClick={this.props.onShowMoreClick}>顯示多一點
-          </button>
-        )}
-      </div>
-      </div>
-    );
-  }
-
-}
-
 export default class 無關鍵字 extends React.Component {
   constructor(props) {
     super(props);
@@ -81,15 +39,8 @@ export default class 無關鍵字 extends React.Component {
   }
 
   render() {
-    // let hot = ['小屁孩', '秀下限', '白海豚', '躺著也中槍'];
-
-    const newWords = this.state.isShowMore ? this.state.newWordsMore : this.state.newWordsLess;
-
     return (
       <div className='kong content'>
-        <新詞區塊 newWords={newWords}
-         isShowMore={this.state.isShowMore}
-         onShowMoreClick={this.onShowMoreClick}/>
         <FBTest/>
       </div>
     );
