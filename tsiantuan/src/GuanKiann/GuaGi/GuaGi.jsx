@@ -62,7 +62,7 @@ export default class GuaGi extends React.Component {
             <div className='content'>
               <h3 className='ui header'>
                 <i className='cloud upload icon'></i>
-                閣會使按呢講
+                貢獻新講法
               </h3>
               <ABo 華語關鍵字={this.props.華語關鍵字}
                csrftoken={this.props.csrftoken}

@@ -36,7 +36,7 @@ class About extends React.Component {
         </div>
         <div className='ui very padded vertical segment'>
         <p className='ui header large'>
-          如果呈現出來的講法都不滿意，可以在「閣會使按呢講」貢獻你的創意。(隱私權聲明：若登入系統，我們會記錄你貢獻的次數並顯示在「名人堂」)
+          如果呈現出來的講法都不滿意，可以在「貢獻新講法」貢獻你的創意。(隱私權聲明：若登入系統，我們會記錄你貢獻的次數並顯示在「名人堂」)
         </p>
         <p className='ui header large'>
           不熟台語漢字及拼音也沒關係，用你的方式盡可能表達你的講法，會有正規化團隊幫忙修改成教育部公告的漢字和臺羅，完成正規化後就會出現在網站上供大家投票。
