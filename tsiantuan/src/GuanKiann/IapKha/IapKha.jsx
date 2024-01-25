@@ -25,7 +25,7 @@ export default class IapKha extends React.Component {
           <section className="three wide column left aligned">
             <h4>站內服務</h4>
             <ul className="list-unstyled padding-s-0">
-              <li><Link className='item' to='/k' className="text-yellow">怎樣講</Link></li>
+              <li><Link className='item' to='/k' className="text-yellow">查辭典</Link></li>
               <li><Link className='item' to='/name' className="text-yellow">你的名字</Link></li>
               <li><Link className='item' to='/tsu-te' className="text-yellow">台語寶鑑</Link></li>
             </ul>
