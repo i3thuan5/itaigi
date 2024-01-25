@@ -21,7 +21,7 @@ class TshiuKiSuanTuann extends React.Component {
     return (
       <div>
         <Link className={menu_item_class('/k')} to='/k' onClick={itemClick}>
-          <i className="sound icon"></i>怎樣講
+          <i className="search icon"></i>查辭典
         </Link>
         <Link className={menu_item_class('/t')} to='/name' onClick={itemClick}>
           <i className="question icon"></i>你的名字
