@@ -23,12 +23,6 @@ export default class 無結果 extends React.Component {
           <div className='ui stackable cards'>
             <div className='ui su card'>
               <div className='content'>
-                <KiuKongHuat 華語關鍵字={this.props.華語關鍵字}
-                  csrftoken={this.props.csrftoken} />
-              </div>
-            </div>
-            <div className='ui su card'>
-              <div className='content'>
                 <h3 className='ui horizontal divider header'>
                   <i className='cloud upload icon'></i>
                   貢獻新講法
