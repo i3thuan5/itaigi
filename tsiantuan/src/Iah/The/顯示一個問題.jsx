@@ -16,7 +16,7 @@ export default class 顯示一個問題 extends React.Component {
           <div className='ui forum segment'>
             <h3 className='ui header'>
               <i className='cloud upload icon'></i>
-              我會曉，「{this.props.華語關鍵字}」會使按呢講
+              針對「{this.props.華語關鍵字}」貢獻新講法
             </h3>
             <ABo 華語關鍵字={this.props.華語關鍵字}
               csrftoken={this.props.csrftoken}
