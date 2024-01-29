@@ -9,7 +9,6 @@ import {
 import Debug from 'debug';
 import App from './App/App';
 import Kong from './Iah/Kong/Kong';
-import The from './Iah/The/The';
 import Iong from './Iah/Iong/Iong';
 import Mia from './Iah/Mia/Mia';
 import 正規化 from './Iah/Mia/正規化';
@@ -38,7 +37,6 @@ render(
       <Route path="/" component={App}>
         <IndexRoute component={Kong} />
         <Route path="k(/:k)(/:han)(/:lo)" component={Kong} />
-        <Route path="t(/:k)" component={The} />
         <Route path="iong" component={Iong} />
         <Route path="mia" component={Mia} />
         <Route path="tsing" component={正規化} />

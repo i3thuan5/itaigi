@@ -1,7 +1,6 @@
 import React from 'react';
 import Tshue from '../../GuanKiann/Tshue/Tshue';
 import ABo from '../../GuanKiann/ABo/ABo';
-import KiuKongHuat from '../../GuanKiann/KiuKongHuat/KiuKongHuat';
 import 其他建議 from './其他建議';
 import 分享鍵 from '../../GuanKiann/分享鍵/分享鍵';
 import 留言板 from '../../GuanKiann/留言板/留言板';
@@ -23,15 +22,9 @@ export default class 無結果 extends React.Component {
           <div className='ui stackable cards'>
             <div className='ui su card'>
               <div className='content'>
-                <KiuKongHuat 華語關鍵字={this.props.華語關鍵字}
-                  csrftoken={this.props.csrftoken} />
-              </div>
-            </div>
-            <div className='ui su card'>
-              <div className='content'>
                 <h3 className='ui horizontal divider header'>
                   <i className='cloud upload icon'></i>
-                  我會曉，會使按呢講
+                  貢獻新講法
                 </h3>
                 <ABo 華語關鍵字={this.props.華語關鍵字}
                   csrftoken={this.props.csrftoken}
