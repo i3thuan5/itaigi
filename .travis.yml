@@ -1,13 +1,14 @@
-sudo: false
 branches:
   only:
   - master
   - cd
 os: linux
-dist: focal
+dist: jammy
 language: python
 python:
-- '3.6'
+- '3.10'
+before_install:
+  - pip install --upgrade pip setuptools
 install:
 - pip install tox
 - sudo apt-get install libsndfile1
