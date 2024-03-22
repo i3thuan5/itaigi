@@ -22,7 +22,7 @@
         dest: "{{ tsuanan_repo }}/.env"
     - name: 設定登入Google Sheet ê鎖匙
       ansible.builtin.shell: |
-        echo ${GOOGLE_SHEET_LOGIN_BASE64} | base64 --decode > ${GOOGLE_SHEET_LOGIN_PATH}
+        echo {{ GOOGLE_SHEET_LOGIN_BASE64 }} | base64 --decode > {{ GOOGLE_SHEET_LOGIN_PATH|quote }}
       args:
         chdir: "{{ tsuanan_repo }}"
     - name: 安裝python控制docker ê套件
