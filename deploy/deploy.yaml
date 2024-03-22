@@ -3,9 +3,10 @@
   hosts: tsiunnsuann
 
   tasks:
-    - name: 專案名先改做小寫
+    - name: 專案名先改做小寫koh有設定絕對path
       ansible.builtin.set_fact:
         tsuanan: "{{ tsuanan_repo|lower }}"
+        tsuanan_path: "{{ lookup('ansible.builtin.env', 'HOME') }}/{{ tsuanan_repo }}"
     - name: 設定Github known_hosts
       ansible.builtin.known_hosts:
         name: 'github.com'
@@ -13,25 +14,25 @@
     - name: 設定Github專案
       ansible.builtin.git:
         repo: "git@github.com:i3thuan5/{{ tsuanan_repo }}.git"
-        dest: "{{ tsuanan_repo }}"
+        dest: "{{ tsuanan_path }}"
         version: "{{ branch }}"
         force: true
     - name: 設定專案.env
       ansible.builtin.template:
         src: .env.template
-        dest: "{{ tsuanan_repo }}/.env"
+        dest: "{{ tsuanan_path }}/.env"
     - name: 設定登入Google Sheet ê鎖匙
       ansible.builtin.shell: |
         echo {{ GOOGLE_SHEET_LOGIN_BASE64 }} | base64 --decode > {{ GOOGLE_SHEET_LOGIN_PATH|quote }}
       args:
-        chdir: "{{ tsuanan_repo }}"
+        chdir: "{{ tsuanan_path }}"
     - name: Log into DockerHub
       community.docker.docker_login:
         username: "{{ DOCKER_USER }}"
         password: "{{ DOCKER_TOKEN }}"
     - name: 開docker compose up -d
       community.docker.docker_compose_v2:
-        project_src: "{{ tsuanan_repo }}"
+        project_src: "{{ tsuanan_path }}"
         build: "always"
         pull: "always"
         remove_orphans: true
@@ -43,4 +44,4 @@
       ansible.builtin.command: |
         docker-compose exec -T gunicorn python manage.py migrate
       args:
-        chdir: "{{ tsuanan_repo }}"
+        chdir: "{{ tsuanan_path }}"
