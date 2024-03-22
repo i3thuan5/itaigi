@@ -1,0 +1,52 @@
+---
+- name: CD
+  hosts: tsiunnsuann
+
+  tasks:
+    - name: 專案名先改做小寫
+      ansible.builtin.set_fact:
+        tsuanan: "{{ tsuanan_repo|lower }}"
+    - name: 設定Github known_hosts
+      ansible.builtin.known_hosts:
+        name: 'github.com'
+        key: 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl'
+    - name: 設定Github專案
+      ansible.builtin.git:
+        repo: "git@github.com:i3thuan5/{{ tsuanan_repo }}.git"
+        dest: "{{ tsuanan_repo }}"
+        version: "{{ branch }}"
+        force: true
+    - name: 設定專案.env
+      ansible.builtin.template:
+        src: .env.template
+        dest: "{{ tsuanan_repo }}/.env"
+    - name: 安裝python控制docker ê套件
+      ansible.builtin.pip:
+        name:
+          - docker
+          - docker-compose
+        extra_args: --user
+    - name: Log into DockerHub
+      community.docker.docker_login:
+        username: "{{ DOCKER_USER }}"
+        password: "{{ DOCKER_TOKEN }}"
+    - name: 開docker-compose up -d
+      community.docker.docker_compose:
+        project_src: "{{ tsuanan_repo }}"
+        build: true
+        pull: true
+        remove_orphans: true
+    - name: 等5秒hōo docker開--開
+      ansible.builtin.wait_for:
+        timeout: 5
+      delegate_to: localhost
+    - name: 更新資料庫
+      ansible.builtin.command: |
+        docker-compose exec -T gunicorn python manage.py migrate
+      args:
+        chdir: "{{ tsuanan_repo }}"
+    - name: 更新nginx
+      ansible.builtin.command: |
+        docker-compose exec -T nginx nginx -s reload
+      args:
+        chdir: "{{ tsuanan_repo }}"
