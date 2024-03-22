@@ -18,6 +18,8 @@ jobs:
   include:
     - name: "django settings"
       env: TOX_ENV=django-settings
+      python:
+      - '3.6'
     - name: "flake8"
       env: TOX_ENV=flake8
     - name: "npm build"
