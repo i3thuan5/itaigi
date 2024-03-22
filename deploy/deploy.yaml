@@ -25,12 +25,6 @@
         echo {{ GOOGLE_SHEET_LOGIN_BASE64 }} | base64 --decode > {{ GOOGLE_SHEET_LOGIN_PATH|quote }}
       args:
         chdir: "{{ tsuanan_repo }}"
-    - name: 安裝python控制docker ê套件
-      ansible.builtin.pip:
-        name:
-          - docker<7.0.0
-          - docker-compose
-        extra_args: --user
     - name: Log into DockerHub
       community.docker.docker_login:
         username: "{{ DOCKER_USER }}"
