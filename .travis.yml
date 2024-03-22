@@ -2,6 +2,7 @@ sudo: false
 branches:
   only:
   - master
+  - cd
 os: linux
 dist: focal
 language: python
