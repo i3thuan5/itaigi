@@ -3,7 +3,7 @@
   hosts: tsiunnsuann
 
   tasks:
-    - name: 專案名先改做小寫koh有設定絕對path
+    - name: 專案名先改做小寫koh有設定絕對位
       ansible.builtin.set_fact:
         tsuanan: "{{ tsuanan_repo|lower }}"
         tsuanan_path: "{{ lookup('ansible.builtin.env', 'HOME') }}/{{ tsuanan_repo }}"
