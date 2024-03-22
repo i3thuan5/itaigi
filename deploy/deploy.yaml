@@ -32,8 +32,8 @@
     - name: 開docker compose up -d
       community.docker.docker_compose_v2:
         project_src: "{{ tsuanan_repo }}"
-        build: true
-        pull: true
+        build: "always"
+        pull: "always"
         remove_orphans: true
     - name: 等5秒hōo docker開--開
       ansible.builtin.wait_for:
