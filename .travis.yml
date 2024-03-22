@@ -18,6 +18,7 @@ jobs:
   include:
     - name: "django settings"
       env: TOX_ENV=django-settings
+      dist: focal
       python:
       - '3.6'
     - name: "flake8"
