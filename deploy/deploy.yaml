@@ -28,7 +28,7 @@
     - name: 安裝python控制docker ê套件
       ansible.builtin.pip:
         name:
-          - docker
+          - docker<7.0.0
           - docker-compose
         extra_args: --user
     - name: Log into DockerHub
