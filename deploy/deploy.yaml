@@ -35,8 +35,8 @@
       community.docker.docker_login:
         username: "{{ DOCKER_USER }}"
         password: "{{ DOCKER_TOKEN }}"
-    - name: 開docker-compose up -d
-      community.docker.docker_compose:
+    - name: 開docker compose up -d
+      community.docker.docker_compose_v2:
         project_src: "{{ tsuanan_repo }}"
         build: true
         pull: true
