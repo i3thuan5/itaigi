@@ -45,8 +45,3 @@
         docker-compose exec -T gunicorn python manage.py migrate
       args:
         chdir: "{{ tsuanan_repo }}"
-    - name: 更新nginx
-      ansible.builtin.command: |
-        docker-compose exec -T nginx nginx -s reload
-      args:
-        chdir: "{{ tsuanan_repo }}"
