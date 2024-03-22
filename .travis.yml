@@ -53,3 +53,4 @@ jobs:
             --extra-vars "SECRET_KEY=${SECRET_KEY}"
             # --extra-vars "SENTRY_DSN=${SENTRY_DSN}"
             # --extra-vars 其他 .env.template 變數
+          '
