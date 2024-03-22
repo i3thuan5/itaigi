@@ -12,17 +12,17 @@ before_install:
 install:
 - pip install tox
 - sudo apt-get install libsndfile1
-script:
-- tox -e $TOX_ENV
 jobs:
   include:
     - name: "django settings"
-      env: TOX_ENV=django-settings
       dist: focal
       python:
       - '3.6'
+      script:
+      - tox -e django-settings
     - name: "flake8"
-      env: TOX_ENV=flake8
+      script:
+      - tox -e flake8
     - name: "npm build"
       language: node_js
       node_js:
