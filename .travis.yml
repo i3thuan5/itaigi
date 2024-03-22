@@ -53,6 +53,8 @@ jobs:
             --extra-vars "DOCKER_TOKEN=${DOCKER_TOKEN}"
             --extra-vars "VIRTUAL_HOST=${VIRTUAL_HOST}"
             --extra-vars "SECRET_KEY=${SECRET_KEY}"
+            --extra-vars "GOOGLE_SHEET_LOGIN_BASE64=${GOOGLE_SHEET_LOGIN_BASE64}"
+            --extra-vars "GOOGLE_SHEET_LOGIN_PATH=${GOOGLE_SHEET_LOGIN_PATH}"
             # --extra-vars "SENTRY_DSN=${SENTRY_DSN}"
             # --extra-vars 其他 .env.template 變數
           '
