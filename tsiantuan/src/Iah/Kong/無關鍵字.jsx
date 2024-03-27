@@ -55,6 +55,7 @@ export default class 無關鍵字 extends React.Component {
             <tr><th>日期</th><th>事項</th></tr>
           </thead>
           <tbody>
+            <tr><td>2024.3.28</td><td>由於人力不足難以配合Facebook審查機制，登入具名貢獻功能暫且下架。</td></tr>
             <tr><td>2023.11.13</td><td>由於貢獻紀錄參雜許多腥羶內容與中國惡意廣告，我很會、燒燙燙新詞暫且下架。</td></tr>
           </tbody>
         </table>
