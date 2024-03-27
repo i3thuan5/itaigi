@@ -1,20 +1,28 @@
-sudo: false
+branches:
+  only:
+  - master
+  - cd
 os: linux
-dist: focal
+dist: jammy
 language: python
 python:
-- '3.6'
+- '3.10'
+before_install:
+  - pip install --upgrade pip setuptools
 install:
 - pip install tox
 - sudo apt-get install libsndfile1
-script:
-- tox -e $TOX_ENV
 jobs:
   include:
     - name: "django settings"
-      env: TOX_ENV=django-settings
+      dist: focal
+      python:
+      - '3.6'
+      script:
+      - tox -e django-settings
     - name: "flake8"
-      env: TOX_ENV=flake8
+      script:
+      - tox -e flake8
     - name: "npm build"
       language: node_js
       node_js:
@@ -24,3 +32,32 @@ jobs:
         - npm ci
       script:
         - npm run build
+    - stage: deploy
+      name: deploy
+      if: (type = push or type = cron) and (branch = master or branch = cd)
+      install:
+        - pip install ansible
+      before_script:
+        - mkdir -p "${HOME}/.ssh/"
+        - TRAVIS_TSUKI_SSH_KEY_PATH="${HOME}/.ssh/id_ed25519_travis"
+        - echo "${DEPLOY_HOST} ssh-ed25519 ${DEPLOY_HOST_SSH_PUBLICKEY}" >> ${HOME}/.ssh/known_hosts
+        - echo "${DEPLOY_HOST_USER_SSH_KEY}" | base64 --decode > "${TRAVIS_TSUKI_SSH_KEY_PATH}"
+        # Recreate the certificate from the secure environment variable
+        - chmod 400 "${TRAVIS_TSUKI_SSH_KEY_PATH}"
+      script:
+        - '
+          ansible-playbook -i deploy/inventory_travis deploy/deploy.yaml
+            --extra-vars "tsuanan_repo=`basename ${TRAVIS_REPO_SLUG}`"
+            --extra-vars "branch=${TRAVIS_BRANCH}"
+            --extra-vars "DEPLOY_HOST=${DEPLOY_HOST}"
+            --extra-vars "DEPLOY_HOST_USER=${DEPLOY_HOST_USER}"
+            --extra-vars "TRAVIS_TSUKI_SSH_KEY_PATH=${TRAVIS_TSUKI_SSH_KEY_PATH}"
+            --extra-vars "DOCKER_USER=${DOCKER_USER}"
+            --extra-vars "DOCKER_TOKEN=${DOCKER_TOKEN}"
+            --extra-vars "VIRTUAL_HOST=${VIRTUAL_HOST}"
+            --extra-vars "SECRET_KEY=${SECRET_KEY}"
+            --extra-vars "GOOGLE_SHEET_LOGIN_BASE64=${GOOGLE_SHEET_LOGIN_BASE64}"
+            --extra-vars "GOOGLE_SHEET_LOGIN_PATH=${GOOGLE_SHEET_LOGIN_PATH}"
+            # --extra-vars "SENTRY_DSN=${SENTRY_DSN}"
+            # --extra-vars 其他 .env.template 變數
+          '
