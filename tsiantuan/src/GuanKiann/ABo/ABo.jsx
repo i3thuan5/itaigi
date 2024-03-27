@@ -87,30 +87,12 @@ export default class ABo extends React.Component {
     });
   }
 
-  render有登入鈕仔() {
-    return (
-      <button
-        className={ 'ui positive button large' + (this.state.送出中 ? ' disabled' : '') }
-        onClick={this.查怎樣講.bind(this)}>送出</button>
-    );
-  }
-
-  render無登入鈕仔() {
+  render無登入ê鈕仔() {
     return (
       <div className='ui buttons'>
         <button
           className={ 'ui button large' + (this.state.送出中 ? ' disabled' : '') }
           onClick={this.查怎樣講.bind(this)}>匿名送出</button>
-        <div className='or'></div>
-        <form method='get' action={後端.登入() }>
-          <input type='submit' className='ui positive button large' value='登入 & 送出'/>
-          <input type='hidden' name='next'
-            value={'/%E5%B0%8E%E5%90%91?%E7%B6%B2%E5%9D%80='
-              + '//itaigi.tw/k/' + this.props.華語關鍵字
-              + '?'
-              + encodeURI('%E6%BC%A2%E5%AD%97=' + this.state.漢字
-              + '&' + '%E9%9F%B3%E6%A8%99=' + this.state.音標)} />
-        </form>
       </div>
     );
 
@@ -149,8 +131,7 @@ export default class ABo extends React.Component {
                 &nbsp;我已經理解<Link to="/unsu">iTaigi隱私權保護條款。</Link>
               </label>
             </div>
-          {this.props.編號 == '無登入' ? this.render無登入鈕仔()
-            : this.render有登入鈕仔() }
+          {this.render無登入ê鈕仔()}
 
             <APui modalIsOpen={this.state.modalIsOpen}
               closeModal={this.closeModal.bind(this)}/>

@@ -163,7 +163,6 @@ INSTALLED_APPS += (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
 )
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -190,13 +189,6 @@ TEMPLATES = [
     },
 ]
 SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'SCOPE': ['email', ],
-        'METHOD': 'js_sdk',
-        'LOCALE_FUNC': lambda request: 'zh_TW',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.3',
-    }
 }
 
 
