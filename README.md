@@ -20,52 +20,12 @@ iTaigi 愛台語
 ### Run
 
 ```bash
-$ npm i
-$ npm start
+$ cd tsiantuan/
+$ npm ci
+$ npm run start
 ```
 
 Then open <http://localhost:3000/>
-
-### Deploy
-```bash
-$ npm run deploy
-```
-
-### Deploy test-server
-
-測試上線。
-
-* 任選其中一臺
-* 到github pull request page
-* 確認沒有pull request正在使用測試機
-* 新增你的pull request
-* 標記你要用的測試機
-
-```bash
-$ npm run deploy-tshi3
-```
-Then open <http://tshi3.itaigi.tw/>
-
-```bash
-$ npm run deploy-giam7
-```
-
-Then open <http://giam7.itaigi.tw/>
-
-```bash
-$ npm run deploy-test
-```
-Then open <http://test.itaigi.tw/>
-
-
-### Coding style check
-
-遵循[Airbnb](https://github.com/airbnb/javascript)排版規則
-
-```bash
-$npm test
-$npm run reformat
-```
 
 ### Nodejs installation (optional)
 
@@ -73,9 +33,9 @@ $npm run reformat
 
 ```
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.nvm/nvm.sh
-$ nvm install 6
+$ nvm install 16
 
-$ nvm use 6
+$ nvm use 16
 ```
 
 ### Backend
@@ -83,22 +43,21 @@ $ nvm use 6
 [Wiki](https://github.com/g0v/itaigi/wiki)
 
 ```
- zcat TSULIAUKHOO.sql.gz | docker-compose exec -T postgres psql -U postgres
+zcat TSULIAUKHOO.sql.gz | docker-compose exec -T postgres psql -U postgres
 ```
 
 ## 更新、上線
-Tī`KauIokPoo-SuTian-TsiunnSuann`專案，
+
 ```bash
 git pull
-docker-compose build --pull
-docker-compose pull
-docker-compose up -d
-docker-compose exec gunicorn python manage.py migrate
+docker compose build --pull
+docker compose pull
+docker compose up -d
+docker compose exec gunicorn python manage.py migrate
 ```
+
 Hó-sè.
 
-
-License
------------
+## License
 
 MIT License <http://g0v.mit-license.org/>
