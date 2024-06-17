@@ -29,10 +29,10 @@ Then open <http://localhost:3000/>
 
 ### Nodejs installation (optional)
 
-可使用nvm安裝nodejs，請指定4以上的版本。
+可使用[nvm](https://github.com/nvm-sh/nvm)安裝nodejs，請安裝nodejs版本16。
 
 ```
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.nvm/nvm.sh
+$ curl ...
 $ nvm install 16
 
 $ nvm use 16
