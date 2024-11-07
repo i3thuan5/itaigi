@@ -35,7 +35,7 @@ export default class HapSing extends React.Component {
     return (
       <span className='HuatIm'>
         <audio ref="音樂">
-          <source type='audio/x-wav'
+          <source type='audio/mpeg'
             src={
               encodeURI('https://hapsing.ithuan.tw/bangtsam?taibun=') +
               encodeURIComponent(標漢字音標)
