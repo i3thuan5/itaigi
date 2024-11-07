@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ar307x56sv7!iodrfx3@))%lp0&^^tg0xhw-@ijr0c4ic_q&wo'
+SECRET_KEY = 'ar307x56sv7!iodrfx3@))%lsui#2p0&^^tg0xhw-@ijr0c4ic_q&wo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -45,7 +45,7 @@ MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',  # CORS
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -65,7 +65,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'itaigi',
-        'HOST': 'pgsql',
+        'HOST': 'postgres',
         'PORT': '',
     }
 }
@@ -163,7 +163,6 @@ INSTALLED_APPS += (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
 )
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -183,18 +182,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 # `allauth` needs this from django
                 'django.template.context_processors.request',
+                # 因為改用django 3.1.4，需要ke這項
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
 ]
 SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'SCOPE': ['email', ],
-        'METHOD': 'js_sdk',
-        'LOCALE_FUNC': lambda request: 'zh_TW',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.3',
-    }
 }
 
 
@@ -237,3 +231,8 @@ SECRET_KEY, DEBUG, DATABASES, LOGGING
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'whitenoise_static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Query「其他建議」，上tsē顯示幾个。避免像「的」這款字查著siunn tsē結果。
+KIANGI_MAX = 90
+# Query「無建議的外語」，上tsē顯示幾个，為著加速。
+BOKIANGI_HUAGI_MAX = 90

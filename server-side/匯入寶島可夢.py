@@ -42,9 +42,9 @@ def 走寶島可夢():
             外語平臺項目編號 = 錯誤.平臺項目編號
         文本平臺項目 = 平臺項目表.外語翻母語(外語平臺項目編號, 閩南語內容)
         文本平臺項目.設為推薦用字()
-            
+
         英語內容 = {
-            '外語資料': 抱去摸對照表[(int(資料['圖鑑編號']),資料['寶可夢'])]
+            '外語資料': 抱去摸對照表[(int(資料['圖鑑編號']), 資料['寶可夢'])]
         }
         try:
             外語平臺項目 = 平臺項目表.加外語資料(英語內容)
@@ -73,7 +73,7 @@ def sheet表內底資料():
 
 
 def sheet表():
-    寶島可夢網址 = 'https://docs.google.com/spreadsheets/d/1LXzPeaL0hbj-HuUeJXKNUetAtwNNgIanN7bXM94iS7s/edit#gid=0'
+    寶島可夢網址 = 'https://docs.google.com/spreadsheets/d/1LXzPeaL0hbj-HuUeJXKNUetAtwNNgIanN7bXM94iS7s/edit#gid=0'  # noqa
     臺語表 = 正規化sheet表.全部資料().get()
     登入憑證 = ServiceAccountCredentials.from_json_keyfile_name(
         臺語表.key_file_name, 正規化sheet表.google_sheet_scope
@@ -101,7 +101,7 @@ def 掠對照表():
                 for 一筆 in 全部資料[1:]:
                     這筆資料 = dict(zip(標題, 一筆))
                     輸出資料.append(這筆資料)
-        except:
+        except Exception:
             pass
     with open(join(dirname(__file__), '語料', '抱去摸對照表.json'), 'w') as 檔案:
         json.dump(輸出資料, 檔案, ensure_ascii=False, indent=2, sort_keys=True)

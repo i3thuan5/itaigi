@@ -1,33 +1,40 @@
-version: '3.5'
-
+---
 services:
   gunicorn:
-    build: server-side/
+    build: ./
     networks:
       - default
       - nginx-bridge
-    expose:
-      - "8001"
     environment:
-      VIRTUAL_HOST: "db.itaigi.tw"
-      VIRTUAL_PORT: 8001
+      VIRTUAL_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      LETSENCRYPT_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+      DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
-  pgsql:
-    image: postgres
+  postgres:
+    image: postgres:15
+    labels:
+      - backup.postgres=true
+    shm_size: '1gb'
     restart: always
     environment:
       POSTGRES_PASSWORD: itaigi
     volumes:
       - pgsql_data:/var/lib/postgresql/data
   celery_beat:
-    build: server-side/
-    command: celery -A itaigi beat -l info
+    build: ./
+    command: celery -A itaigi beat -l info --pidfile=
+    environment:
+      DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   celery:
-    build:
-      context: server-side/
-      dockerfile: Dockerfile-celery
+    build: ./
     command: celery -A itaigi worker -l info
+    environment:
+      DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
+      SECRET_KEY: ${SECRET_KEY}
     restart: always
   rabbitmq:
     image: rabbitmq:3-management
@@ -37,6 +44,30 @@ services:
       RABBITMQ_DEFAULT_VHOST: itaigi
     volumes:
       - rabbit_data:/var/lib/rabbitmq
+    restart: always
+  miasenn:
+    image: ithuan/itaigi:miasenn
+    command: gunicorn miasenn.wsgi --log-level debug -b 0.0.0.0:8000
+    networks:
+      - nginx-bridge
+    environment:
+      VIRTUAL_HOST: "miasenn.itaigi.tw"
+      LETSENCRYPT_HOST: "miasenn.itaigi.tw"
+      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    restart: always
+  leku:
+    image: ithuan/itaigi:leku
+    command: gunicorn hok8bu7.wsgi --log-level debug -b 0.0.0.0:8000
+    networks:
+      - nginx-bridge
+    expose:
+      - 8000
+    environment:
+      VIRTUAL_HOST: "leku.itaigi.tw"
+      LETSENCRYPT_HOST: "leku.itaigi.tw"
+      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    restart: always
+
 
 volumes:
   pgsql_data:
@@ -45,5 +76,3 @@ volumes:
 networks:
   nginx-bridge:
     external: true
-
- 
