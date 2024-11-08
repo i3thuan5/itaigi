@@ -123,7 +123,7 @@ export default class ABo extends React.Component {
               <label for="cc">
                   <input type='checkbox' id="cc"/> 
                   &nbsp;我同意內容以
-                  <a href="http://creativecommons.tw/cc0" target='blank'>CC0 公眾領域貢獻宣告</a>
+                  <a href="https://creativecommons.org/publicdomain/zero/1.0/" target='blank'>CC0 公眾領域貢獻宣告</a>
                   釋出授權到公眾領域。
               </label>
               <label for="unsu">
