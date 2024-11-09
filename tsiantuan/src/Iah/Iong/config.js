@@ -11,18 +11,6 @@ const list = [
         link: ' https://sutian.moe.edu.tw/ ',
       },
       {
-        title: '小川尚義《臺日大辭典》',
-        link: 'https://minhakka.ling.sinica.edu.tw/taijittian/',
-      },
-      {
-        title: '甘為霖《廈門音新字典（甘字典）》',
-        link: 'https://taigi.fhl.net/dick/',
-      },
-      {
-        title: '杜嘉德《廈英大辭典》',
-        link: 'https://minhakka.ling.sinica.edu.tw/bkg/chong-su-tian.php?gi_gian=hoa',
-      },
-      {
         title: 'ChhoeTaigi 台語辭典⁺',
         link: 'https://chhoe.taigi.info',
       },
