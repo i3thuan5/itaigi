@@ -58,6 +58,7 @@ class Su extends React.Component {
   render() {
     let { suText, suIm, suId, 貢獻者, 按呢講好, 按呢無好, 按呢講的外語列表 } = this.props;
     if (貢獻者 == '匿名') 貢獻者 = '沒有人';
+    if (貢獻者 == '臺灣閩南語常用詞辭典') 貢獻者 = '教育部《臺灣台語常用詞辭典》';
 
     let suImText = (suText === suIm) ? '' : suIm;
 

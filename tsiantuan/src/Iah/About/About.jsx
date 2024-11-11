@@ -35,11 +35,11 @@ class About extends React.Component {
         <h2>合作單位</h2>
         <p style={{lineHeight: "1.8rem"}}>
           本網站的語音合成服務由
-          <a href='https://意傳.台灣/'>意傳科技</a>的台灣媠聲計劃提供，台灣媠聲接受
+          <a href='https://ithuan.tw/'>意傳科技</a>的台灣媠聲計劃提供，台灣媠聲接受
           <a href='https://www.moc.gov.tw/'>文化部</a>語言多樣性友善環境補助。
         </p>
         <img
-            src='https://mocfile.moc.gov.tw/mochistory/images/download/logo/moc/moc_logo1.png'
+            src='https://file.moc.gov.tw/001/Upload/OldFiles/AdminUploads/mochistory/images/download/logo/moc/moc_logo1.png'
             width='300px' />
         </section>
       </div>
