@@ -65,13 +65,7 @@ export default class ABo extends React.Component {
       };
     }
 
-    superagent.post(後端.加新詞文本())
-      .withCredentials()
-      .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('X-CSRFToken', this.props.csrftoken)
-      .send(建議新詞文本)
-      .then(({ body }) => (this.openModal()))
-      .catch((a) => (debug(a)));
+    // ...superagent貢獻請求已經落線
   }
 
   openModal() {
