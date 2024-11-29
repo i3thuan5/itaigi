@@ -5,8 +5,8 @@ import 後端 from '../後端';
 import 例句表 from '../GuanKiann/例句/例句表';
 import 載入頁面 from '../GuanKiann/載入頁面/載入頁面';
 import { gaLeKu } from '../GA';
+import { oomiatuann } from './OoMiaTuann';
 import './App.css';
-
 import { Promise } from 'bluebird';
 import { browserHistory } from 'react-router';
 
@@ -33,11 +33,21 @@ export default class App extends React.Component {
   }
 
   查怎樣講(外語) {
-    if(外語 && 外語.length < 10) {
+    let pitui_oomia_tin = [];
+    if(外語) {
+      pitui_oomia_tin = oomiatuann.filter(substr => 外語.includes(substr));
+    }
+    if(pitui_oomia_tin.length > 0) {
+      browserHistory.replace('/');
+      return;
+    }
+    if(外語 && 外語.length < 10 ) {
       browserHistory.replace('/k/' + 外語);
+      return;
     }
     else {
       browserHistory.replace('/');
+      return;
     }
   }
 
