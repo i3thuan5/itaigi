@@ -11,6 +11,7 @@ export default class 錯誤 extends React.Component {
       <div className='ui segment'>
         <h3>找「{this.props.華語關鍵字}」錯了嗎？</h3>
         {this.props.內容}
+      </div>
     </div>
     );
   }
