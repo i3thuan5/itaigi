@@ -33,7 +33,12 @@ export default class App extends React.Component {
   }
 
   查怎樣講(外語) {
-    browserHistory.replace('/k/' + 外語);
+    if(外語 && 外語.length < 10) {
+      browserHistory.replace('/k/' + 外語);
+    }
+    else {
+      browserHistory.replace('/');
+    }
   }
 
   欲提供講法(外語) {
