@@ -114,6 +114,7 @@ export default class ABo extends React.Component {
           {this.render無登入ê鈕仔()}
 
             <APui modalIsOpen={this.state.modalIsOpen}
+              openModal={this.openModal.bind(this)}
               closeModal={this.closeModal.bind(this)}/>
         </div>
       );
