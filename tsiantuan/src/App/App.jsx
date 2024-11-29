@@ -37,11 +37,7 @@ export default class App extends React.Component {
     if(外語) {
       pitui_oomia_tin = oomiatuann.filter(substr => 外語.includes(substr));
     }
-    if(pitui_oomia_tin.length > 0) {
-      browserHistory.replace('/');
-      return;
-    }
-    if(外語 && 外語.length < 10 ) {
+    if(外語 && 外語.length < 10 && pitui_oomia_tin.length == 0) {
       browserHistory.replace('/k/' + 外語);
       return;
     }
