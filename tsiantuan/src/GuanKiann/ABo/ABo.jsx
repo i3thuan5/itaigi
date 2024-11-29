@@ -51,20 +51,6 @@ export default class ABo extends React.Component {
 
   加外語新詞文本(外語項目編號) {
     debug(外語項目編號);
-    let 建議新詞文本;
-    if (this.state.漢字 !== '') {
-      建議新詞文本 = {
-        '外語項目編號': 外語項目編號,
-        '文本資料': this.state.漢字,
-        '音標資料': this.state.音標,
-      };
-    } else {
-      建議新詞文本 = {
-        '外語項目編號': 外語項目編號,
-        '文本資料': this.state.音標,
-      };
-    }
-
     // ...superagent貢獻請求已經落線
   }
 
