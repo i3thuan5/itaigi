@@ -37,11 +37,6 @@ export default class 後端  {
     return encodeURI(this.網址() + '平臺項目/投票');
   }
 
-  static 加新詞文本() {
-    return encodeURI(this.網址() + '平臺項目/加新詞文本');
-
-  }
-
   static 揣列表(名) {
     return encodeURI(this.網址() +  '平臺項目列表/揣列表?關鍵字=' + 名);
   }

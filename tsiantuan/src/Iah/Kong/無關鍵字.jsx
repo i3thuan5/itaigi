@@ -55,6 +55,7 @@ export default class 無關鍵字 extends React.Component {
             <tr><th>日期</th><th>事項</th></tr>
           </thead>
           <tbody>
+            <tr><td>2024.11.29</td><td>由於後台仍收到大量惡意廣告，「貢獻新講法」暫且關閉。</td></tr>
             <tr><td>2024.11.10</td><td>更新外部超連結網址及名稱。</td></tr>
             <tr><td>2024.11.7</td><td>修正iPhone、iPad聲音播放問題。</td></tr>
             <tr><td>2024.3.28</td><td>由於人力不足難以配合Facebook審查機制，登入具名貢獻功能暫且下架。</td></tr>
