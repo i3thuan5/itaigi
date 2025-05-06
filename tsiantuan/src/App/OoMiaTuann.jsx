@@ -53,5 +53,7 @@ export const oomiatuann = [
 '色鬼久久',
 '综合',
 '在线',
+'@',
+'换脸',
 ]
 
