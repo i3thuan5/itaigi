@@ -1,5 +1,7 @@
 import React from 'react';
 import Transmit from 'react-transmit';
+import { browserHistory } from 'react-router';
+import { oomiatuann } from '../../App/OoMiaTuann';
 import Tshue from '../../GuanKiann/Tshue/Tshue';
 import 錯誤 from './錯誤';
 import 無結果 from './無結果';
@@ -15,6 +17,18 @@ import Debug from 'debug';
 var debug = Debug('itaigi:Kong');
 
 class Kong extends React.Component {
+  constructor(props) {
+    super(props);
+    let 外語 = props.params.k;
+    if(外語) {
+      let pitui_oomia_tin = oomiatuann.filter(substr => 外語.includes(substr));
+      if(外語 && 外語.length < 10 && pitui_oomia_tin.length == 0) {
+      }
+      else {
+        browserHistory.replace('/');
+      }
+    }
+  }
 
   render無關鍵字() {
     return (
