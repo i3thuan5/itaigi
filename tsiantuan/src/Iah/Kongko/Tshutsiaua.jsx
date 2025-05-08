@@ -54,6 +54,15 @@ export default class Tshutsiaua extends React.Component {
             <li>期待已久的白話字版本也正在趕工中，請大家再等等一下！</li>
           </ul>
         </section>
+
+        <section style={{marginBottom:"20px"}}>
+          <p>
+            📈itaigi為什麼會想刊廣告呢？
+          </p>
+          <p>
+            考慮itaigi有客服、主機、資安、人事等等營運成本，另一方面也希望未來有經費可以支持itaigi改版。因為itaigi現今還找不到兼顧公益性和財務可行的方案，決定先用台語相關產品做廣告，讓廣告效益能支持itaigi繼續營運。💪
+          </p>
+        </section>
       </div>
     </div>
     );
