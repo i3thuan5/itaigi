@@ -48,7 +48,7 @@ jobs:
       python:
         - '3.6'
       script:
-        - tox -e checkmigrations
+        - tox -e checkmigrations-fail
     - name: "npm build"
       language: node_js
       node_js:
