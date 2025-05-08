@@ -1,0 +1,11 @@
+---
+extends: default
+
+rules:
+  line-length:
+    ignore:
+      - '.travis.yml'
+      - 'deploy/deploy.yaml'
+
+ignore:
+  - node_modules/

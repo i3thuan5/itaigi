@@ -1,17 +1,18 @@
+---
 branches:
   only:
-  - master
-  - cd
+    - master
+    - cd
 os: linux
 dist: jammy
 language: python
 python:
-- '3.10'
+  - '3.10'
 before_install:
   - pip install --upgrade pip setuptools
 install:
-- pip install tox
-- sudo apt-get install libsndfile1
+  - pip install tox
+  - sudo apt-get install libsndfile1
 jobs:
   include:
     - name: Check YAML format
@@ -45,9 +46,9 @@ jobs:
     - name: "Check Migrations"
       dist: focal
       python:
-      - '3.6'
+        - '3.6'
       script:
-      - tox -e checkmigrations
+        - tox -e checkmigrations
     - name: "npm build"
       language: node_js
       node_js:
