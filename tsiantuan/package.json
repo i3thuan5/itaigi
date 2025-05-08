@@ -8,10 +8,6 @@
     "test": "eslint *.js src/",
     "reformat": "jscs -x *.js src/",
     "build": "mkdir -p build;rm -rf build/* && NODE_ENV=production webpack --config webpack.config.prod.js && cp html/index.html favicons/* build/ && cp -r design/ build/ && cp html/index.html build/404.html",
-    "deploy": "npm run build && rm -rf node_modules/gh-pages/.cache/ && gh-pages -d build/",
-    "deploy-tshi3": "npm run build && (echo 'tshi3.itaigi.tw' > build/CNAME) && rm -rf node_modules/gh-pages/.cache/ && gh-pages -r https://github.com/g0v-frontend-test/itaigi-tshi3.git -d build/",
-    "deploy-giam7": "npm run build && (echo 'giam7.itaigi.tw' > build/CNAME) && rm -rf node_modules/gh-pages/.cache/ && gh-pages -r https://github.com/g0v-frontend-test/itaigi-giam7.git -d build/",
-    "deploy-test": "npm run build && (echo 'test.itaigi.tw' > build/CNAME) && rm -rf node_modules/gh-pages/.cache/ && gh-pages -r https://github.com/g0v-frontend-test/itaigi-test.git -d build/"
   },
   "repository": {
     "type": "git",
@@ -53,7 +49,6 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "file-loader": "^0.10.0",
-    "gh-pages": "^0.12.0",
     "jest": "^26.6.3",
     "jscs": "^3.0.7",
     "json-loader": "^0.5.4",
