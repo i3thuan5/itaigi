@@ -43,7 +43,7 @@ jobs:
         - pip install tox
       script:
         - tox -e shellcheck
-    - name: "Check Migrations"
+    - name: "Check Migrations(Fail)"
       dist: focal
       python:
         - '3.6'
