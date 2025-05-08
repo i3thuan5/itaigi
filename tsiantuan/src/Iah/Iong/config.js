@@ -60,7 +60,10 @@ const list = [
         title: '《講台語當著時》（台語教學影片）',
         link: 'https://liztaigi.blogspot.com/2017/11/blog-post.html',
       },
-
+      {
+        title: '意傳科技「厝鳥仔講台語」',
+        link: 'https://apps.apple.com/app/apple-store/id6743581200?pt=123902979&ct=itaigi-iong&mt=8',
+      },
     ],
   },
   {
