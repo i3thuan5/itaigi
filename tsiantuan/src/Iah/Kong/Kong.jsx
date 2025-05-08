@@ -22,9 +22,7 @@ class Kong extends React.Component {
     let 外語 = props.params.k;
     if(外語) {
       let pitui_oomia_tin = oomiatuann.filter(substr => 外語.includes(substr));
-      if(外語 && 外語.length < 10 && pitui_oomia_tin.length == 0) {
-      }
-      else {
+      if(!(外語.length < 10 && pitui_oomia_tin.length == 0)) {
         browserHistory.replace('/');
       }
     }
