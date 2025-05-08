@@ -16,7 +16,7 @@ export default class Tshutsiaua extends React.Component {
         </p>
 
         <p>
-          <img className='preview' src={preview1}/>
+          <img className='preview' src={preview1} alt="主題模式使用範例圖，有例句和評分結果"/>
         </p>
 
         <section style={{marginBottom:"20px"}}>

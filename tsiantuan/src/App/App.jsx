@@ -8,8 +8,7 @@ import { gaLeKu } from '../GA';
 import { oomiatuann } from './OoMiaTuann';
 import './App.css';
 import { Promise } from 'bluebird';
-import { browserHistory } from 'react-router';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 var superagent = require('superagent-promise')(require('superagent'), Promise);
 import Debug from 'debug';
