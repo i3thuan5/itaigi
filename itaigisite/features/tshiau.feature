@@ -65,8 +65,8 @@ Scenario: 提示相關華語
 @參詳好勢，猶未做
 Scenario: 無登入就想回答、投票，得要求登入
 		Given 還沒登入
-		 When 想回答
-		 Then 要求他先註冊或登入
+		When 想回答
+		Then 要求他先註冊或登入
 
 @參詳好勢，猶未做
 Scenario: 會照讚排先後
@@ -80,7 +80,7 @@ Scenario: 會照讚排先後
 		When 有人覺得這個回答讚
 			| 羅馬字 | 漢字 |
 			| jio̍k-huâ | jio̍k-huâ |
-		When 查詢 "花"
+		And 查詢 "花"
 		Then 回答先後是
 			| 羅馬字 | 漢字 | 讚 |
 			| jio̍k-huâ | jio̍k-huâ | 1 |
