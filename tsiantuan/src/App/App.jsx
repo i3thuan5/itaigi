@@ -9,6 +9,7 @@ import { oomiatuann } from './OoMiaTuann';
 import './App.css';
 import { Promise } from 'bluebird';
 import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 var superagent = require('superagent-promise')(require('superagent'), Promise);
 import Debug from 'debug';
@@ -69,9 +70,9 @@ export default class App extends React.Component {
       <header className='app header'>
         <ToLam pathname={this.props.location.pathname}/>
       </header>
-      <header className='app header-kongko'>
+      <Link className='app header-kongko' to='/tshutsiaua'>
         🚀「厝鳥仔講台語」跟讀練習APP上架啦！🔥 立即下載輕鬆開喙說台語！
-      </header>
+      </Link>
         { React.cloneElement(
           this.props.children,
           {

@@ -21,6 +21,7 @@ import TshiuKiSuanTuann from './GuanKiann/TshiuKiSuanTuann/TshiuKiSuanTuann';
 import 名姓 from './Iah/名姓/名姓';
 import Unsu from './Iah/About/Unsu';
 import Hokbu from './Iah/About/Hokbu';
+import 厝鳥仔 from './Iah/Kongko/Tshutsiaua';
 
 Debug.enable('itaigi:*');
 
@@ -47,6 +48,7 @@ render(
         <Route path="name(/:senn)(/:mia)(/)" component={名姓} />
         <Route path="unsu" component={Unsu} />
         <Route path="hokbu" component={Hokbu} />
+        <Route path="tshutsiaua" component={厝鳥仔} />
         <Route path="*" component={Kong} />
       </Route>
     </Router>
