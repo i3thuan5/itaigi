@@ -20,7 +20,7 @@
 
   "no-files-without-scenarios": "off",
   "allowed-tags": [
-    "on", {"tags": ["@caho還沒做", "@wip", "@maherekayto做好了"]}
+    "on", {"tags": ["@參詳好勢，猶未做", "@做好--ah"]}
   ]
 }
 
