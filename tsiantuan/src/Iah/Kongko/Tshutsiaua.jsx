@@ -12,7 +12,7 @@ export default class Tshutsiaua extends React.Component {
       <div style={{fontSize: "1.2rem", paddingTop: "20px", paddingBottom:"20px"}}>
         <h1>「厝鳥仔講台語」跟讀練習APP上架啦！🎉🎉🎉</h1>
         <p>
-          「厝鳥仔講台語」是itaigi維護團隊意傳科技全新推出台語口說練習App！讓你隨時隨地輕鬆開口講台語，讓口說更輪轉！
+          「厝鳥仔講台語」是iTaigi維護團隊意傳科技全新推出台語口說練習App！讓你隨時隨地輕鬆開口講台語，讓口說更輪轉！
         </p>
 
         <p>
