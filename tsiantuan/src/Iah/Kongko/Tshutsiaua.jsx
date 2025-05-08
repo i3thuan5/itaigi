@@ -1,19 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router';
+import './Tshutsiaua.css';
+import preview1 from './1.png'
 
 
 export default class Tshutsiaua extends React.Component {
 
   render() {
     return (
-    <div className='main ui text container about'>
+    <div className='main ui text container'>
       <div style={{fontSize: "1.2rem", paddingTop: "20px", paddingBottom:"20px"}}>
         <h1>「厝鳥仔講台語」跟讀練習APP上架啦！🎉🎉🎉</h1>
         <p>
           「厝鳥仔講台語」是itaigi維護團隊意傳科技全新推出台語口說練習App！讓你隨時隨地輕鬆開口講台語，讓口說更輪轉！
         </p>
 
-        <img width="90%" src=""/>
+        <p>
+          <img className='preview' src={preview1}/>
+        </p>
 
         <section style={{marginBottom:"20px"}}>
           <p>
@@ -44,10 +48,10 @@ export default class Tshutsiaua extends React.Component {
             📣 貼心提醒：
           </p>
           <ul>
-            <li>本 App 的語音辨識功能目前尚未辨識聲調，主要針對發音的準確度進行判斷喔！</li>
-            <li>期待已久的白話字版本也正在趕工中，請大家再等等一下！</li>
             <li>Android 版本也正在努力開發中，請安卓的朋友們敬請期待！</li>
+            <li>本 App 的語音辨識功能目前尚未辨識聲調，主要針對發音的準確度進行判斷喔！</li>
             <li>為注重使用者隱私，本 App不會收集使用者音檔作為任何用途，請安心使用！</li>
+            <li>期待已久的白話字版本也正在趕工中，請大家再等等一下！</li>
           </ul>
         </section>
       </div>
