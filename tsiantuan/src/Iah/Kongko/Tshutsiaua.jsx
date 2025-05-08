@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import './Tshutsiaua.css';
 import preview1 from './1.png'
+import badge from './app_store_badge.svg'
 
 
 export default class Tshutsiaua extends React.Component {
@@ -39,7 +40,12 @@ export default class Tshutsiaua extends React.Component {
             🎁 還在等什麼？趕緊手刀下載「厝鳥仔講台語」，和厝鳥仔一起快樂學台語！
           </p>
           <p>
-            🔗 iOS 版 App Store 搜尋：<Link target='_blank' to='https://apps.apple.com/app/apple-store/id6743581200?pt=123902979&ct=itaigi&mt=8'>厝鳥仔講台語</Link>
+            🔗 iOS 版 App Store 搜尋：「厝鳥仔講台語」
+          </p>
+          <p>
+            <Link target='_blank' to='https://apps.apple.com/app/apple-store/id6743581200?pt=123902979&ct=itaigi&mt=8'>
+              <img alt="App Store 下載" width="160px" src={badge} />
+            </Link>
           </p>
         </section>
 
