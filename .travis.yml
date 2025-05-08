@@ -42,12 +42,12 @@ jobs:
         - pip install tox
       script:
         - tox -e shellcheck
-    - name: "django settings"
+    - name: "Check Migrations"
       dist: focal
       python:
       - '3.6'
       script:
-      - tox -e django-settings
+      - tox -e checkmigrations
     - name: "npm build"
       language: node_js
       node_js:
