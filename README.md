@@ -2,7 +2,7 @@
 iTaigi 愛台語
 ===========
 
-[![Build Status](https://travis-ci.org/g0v/itaigi.svg?branch=master)](https://travis-ci.org/g0v/itaigi)
+[![Build Status](https://app.travis-ci.com/i3thuan5/itaigi.svg?token=waFyTE3XbanfxopdQkua&branch=main)](https://app.travis-ci.com/i3thuan5/itaigi)
 [![devDependency Status](https://david-dm.org/g0v/itaigi/dev-status.svg)](https://david-dm.org/g0v/itaigi?type=dev)
 [![made in taiwan](https://img.shields.io/badge/made%20in-taiwan-blue.svg)](https://itaigi.tw)
 [![made in g0v](https://img.shields.io/badge/made%20in-g0v-B81C21.svg)](http://g0v.tw/en-US/)
