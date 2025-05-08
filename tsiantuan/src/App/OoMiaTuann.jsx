@@ -54,6 +54,8 @@ export const oomiatuann = [
 '综合',
 '在线',
 '@',
+'#',
+'[',
 '换脸',
 ]
 
