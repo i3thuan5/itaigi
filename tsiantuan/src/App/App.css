@@ -41,6 +41,17 @@ body {
   background: #1b1c1d;
 }
 
+.app .app.header-kongko {
+  display: flex;
+  justify-content: center;
+  background: #ec555a;
+  color: #fff;
+  padding: 12px 6px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .ui.button.no-border {
   box-shadow: none;
 }

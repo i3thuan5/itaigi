@@ -69,6 +69,9 @@ export default class App extends React.Component {
       <header className='app header'>
         <ToLam pathname={this.props.location.pathname}/>
       </header>
+      <header className='app header-kongko'>
+        🚀「厝鳥仔講台語」跟讀練習APP上架啦！🔥 立即下載輕鬆開喙說台語！
+      </header>
         { React.cloneElement(
           this.props.children,
           {
