@@ -14,15 +14,40 @@ install:
 - sudo apt-get install libsndfile1
 jobs:
   include:
+    - name: Check YAML format
+      install:
+        - pip install tox
+      script:
+        - tox -e yamllint
+    - name: Check Markdown Format
+      install:
+        - pip install tox
+      script:
+        - tox -e pymarkdown
+    - name: Check Gherkin format
+      language: node_js
+      node_js: 22
+      before_install: skip
+      install:
+        - npm install gherkin-lint
+      script:
+        - npx gherkin-lint
+    - name: Check Python Format
+      install:
+        - pip install tox
+      script:
+        - tox -e flake8
+    - name: Check Bash format
+      install:
+        - pip install tox
+      script:
+        - tox -e shellcheck
     - name: "django settings"
       dist: focal
       python:
       - '3.6'
       script:
       - tox -e django-settings
-    - name: "flake8"
-      script:
-      - tox -e flake8
     - name: "npm build"
       language: node_js
       node_js:
