@@ -32,10 +32,12 @@ class About extends React.Component {
         </section>
 
         <section style={{marginBottom:"20px"}}>
-        <h2>合作單位</h2>
+        <h2>維護團隊</h2>
         <p style={{lineHeight: "1.8rem"}}>
-          本網站的語音合成服務由
-          <a href='https://ithuan.tw/'>意傳科技</a>的台灣媠聲計劃提供，台灣媠聲接受
+          網站現由<a href='https://ithuan.tw/'>意傳科技</a>維護，負責客服、資安事故及主機營運，並維護詞條的語音合成服務。意傳科技是主要業務為本土語言的資訊公司，發展各種語言學習和書寫工具的資訊系統，期待能幫助語言學習者與語言工作者，讓大家能和親人、社會不同族群交流。
+        </p>
+        <p style={{lineHeight: "1.8rem"}}>
+          註：語音合成服務由<a href='https://suisiann-dataset.ithuan.tw/'>台灣媠聲計劃</a>提供，台灣媠聲接受
           <a href='https://www.moc.gov.tw/'>文化部</a>語言多樣性友善環境補助。
         </p>
         <img
