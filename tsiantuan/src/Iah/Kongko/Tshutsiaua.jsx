@@ -42,7 +42,8 @@ export default class Tshutsiaua extends React.Component {
           <p>
             🔗 iOS 版 App Store 搜尋：「厝鳥仔講台語」
           </p>
-          <p>
+          <p style={{display: "flex", alignItems: "center"}}>
+            <span style={{fontSize: "3rem", paddingTop: "20px", paddingBottom:"20px"}}>點擊我下載👉</span>
             <Link target='_blank' to='https://apps.apple.com/app/apple-store/id6743581200?pt=123902979&ct=itaigi&mt=8'>
               <img alt="App Store 下載" width="160px" src={badge} />
             </Link>
