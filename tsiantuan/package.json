@@ -7,7 +7,7 @@
     "seo": "node seoServer.js",
     "test": "eslint *.js src/",
     "reformat": "jscs -x *.js src/",
-    "build": "mkdir -p build;rm -rf build/* && NODE_ENV=production webpack --config webpack.config.prod.js && cp html/index.html favicons/* build/ && cp -r design/ build/ && cp html/index.html build/404.html",
+    "build": "mkdir -p build;rm -rf build/* && NODE_ENV=production webpack --config webpack.config.prod.js && cp html/index.html favicons/* build/ && cp -r design/ build/ && cp html/index.html build/404.html"
   },
   "repository": {
     "type": "git",
