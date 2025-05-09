@@ -38,7 +38,7 @@ services:
     restart: always
   rabbitmq:
     image: rabbitmq:3-management
-    environment: 
+    environment:
       RABBITMQ_DEFAULT_USER: itaigi
       RABBITMQ_DEFAULT_PASS: itaigi
       RABBITMQ_DEFAULT_VHOST: itaigi
