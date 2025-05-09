@@ -1,8 +1,7 @@
 ---
 branches:
   only:
-    - master
-    - cd
+    - main
 os: linux
 dist: jammy
 language: python
@@ -60,7 +59,7 @@ jobs:
         - npm run build
     - stage: deploy
       name: deploy
-      if: (type = push or type = cron) and (branch = master or branch = cd)
+      if: (type = push or type = cron) and (branch = main)
       install:
         - pip install ansible
       before_script:
