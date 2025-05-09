@@ -1,9 +1,7 @@
-<a href="https://itaigi.tw/"><img src="https://raw.githubusercontent.com/g0v/itaigi/master/design/logo.svg" width="100"></a>
-iTaigi 愛台語
-===========
+# iTaigi 愛台語
 
 [![Build Status](https://app.travis-ci.com/i3thuan5/itaigi.svg?token=waFyTE3XbanfxopdQkua&branch=main)](https://app.travis-ci.com/i3thuan5/itaigi)
-[![devDependency Status](https://david-dm.org/g0v/itaigi/dev-status.svg)](https://david-dm.org/g0v/itaigi?type=dev)
+[![devDependency Status](https://david-dm.org/i3thuan5/itaigi/dev-status.svg)](https://david-dm.org/i3thuan5/itaigi?type=dev)
 [![made in taiwan](https://img.shields.io/badge/made%20in-taiwan-blue.svg)](https://itaigi.tw)
 [![made in g0v](https://img.shields.io/badge/made%20in-g0v-B81C21.svg)](http://g0v.tw/en-US/)
 
@@ -17,12 +15,12 @@ iTaigi 愛台語
 * [例句API](https://github.com/i3thuan5/itaigi-LeKu)
 * [名姓API](https://github.com/i3thuan5/itaigi-MiaSenn)
 
-### Run
+## Run
 
 ```bash
-$ cd tsiantuan/
-$ npm ci
-$ npm run start
+cd tsiantuan/
+npm ci
+npm run start
 ```
 
 Then open <http://localhost:3000/>
@@ -31,18 +29,17 @@ Then open <http://localhost:3000/>
 
 可使用[nvm](https://github.com/nvm-sh/nvm)安裝nodejs，請安裝nodejs版本16。
 
-```
-$ curl ...
-$ nvm install 16
-
-$ nvm use 16
+```bash
+curl ...
+nvm install 16
+nvm use 16
 ```
 
 ### Backend
 
 [Wiki](https://github.com/g0v/itaigi/wiki)
 
-```
+```bash
 zcat TSULIAUKHOO.sql.gz | docker-compose exec -T postgres psql -U postgres
 ```
 
