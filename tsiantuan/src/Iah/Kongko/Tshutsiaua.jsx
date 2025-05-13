@@ -10,7 +10,7 @@ export default class Tshutsiaua extends React.Component {
   render() {
     return (
     <div className='main ui text container'>
-      <div style={{fontSize: "1.2rem", paddingTop: "20px", paddingBottom:"20px"}}>
+      <div className='kongko' style={{fontSize: "1.2rem", paddingTop: "20px", paddingBottom:"20px"}}>
         <h1>「厝鳥仔講台語」跟讀練習APP上架啦！🎉🎉🎉</h1>
         <p>
           「厝鳥仔講台語」是iTaigi維護團隊意傳科技全新推出台語口說練習App！讓你隨時隨地輕鬆開口講台語，讓口說更輪轉！
@@ -62,14 +62,16 @@ export default class Tshutsiaua extends React.Component {
           </ul>
         </section>
 
-        <section style={{marginBottom:"20px"}}>
+        <hr/>
+
+        <aside style={{marginBottom:"20px"}}>
           <p>
-            📈iTaigi為什麼會想刊廣告呢？
+            iTaigi為什麼會想刊廣告呢？
           </p>
           <p>
             考慮iTaigi有客服、主機、資安、人事等等營運成本，另一方面也希望未來有經費可以支持iTaigi改版。因為iTaigi現今還找不到兼顧公益性和財務可行的方案，決定先用台語相關產品做廣告，讓廣告效益能支持iTaigi繼續營運。💪
           </p>
-        </section>
+        </aside>
       </div>
     </div>
     );

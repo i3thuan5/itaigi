@@ -4,3 +4,7 @@ img.preview {
   margin-right: auto;
   width: 90%;
 }
+
+div.kongko p {
+  line-height: 1.7;
+}
