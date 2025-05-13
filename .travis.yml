@@ -1,28 +1,53 @@
+---
 branches:
   only:
-  - master
-  - cd
+    - main
 os: linux
 dist: jammy
 language: python
 python:
-- '3.10'
+  - '3.10'
 before_install:
   - pip install --upgrade pip setuptools
 install:
-- pip install tox
-- sudo apt-get install libsndfile1
+  - pip install tox
+  - sudo apt-get install libsndfile1
 jobs:
   include:
-    - name: "django settings"
+    - name: Check YAML format
+      install:
+        - pip install tox
+      script:
+        - tox -e yamllint
+    - name: Check Markdown Format
+      install:
+        - pip install tox
+      script:
+        - tox -e pymarkdown
+    - name: Check Gherkin format
+      language: node_js
+      node_js: 22
+      before_install: skip
+      install:
+        - npm install gherkin-lint
+      script:
+        - npx gherkin-lint
+    - name: Check Python Format
+      install:
+        - pip install tox
+      script:
+        - tox -e flake8
+    - name: Check Bash format
+      install:
+        - pip install tox
+      script:
+        - tox -e shellcheck
+    - name: "Check Migrations(Fail)"
       dist: focal
       python:
-      - '3.6'
+        - '3.6'
       script:
-      - tox -e django-settings
-    - name: "flake8"
-      script:
-      - tox -e flake8
+        - tox -e checkmigrations-fail
     - name: "npm build"
       language: node_js
       node_js:
@@ -34,7 +59,7 @@ jobs:
         - npm run build
     - stage: deploy
       name: deploy
-      if: (type = push or type = cron) and (branch = master or branch = cd)
+      if: (type = push or type = cron) and (branch = main)
       install:
         - pip install ansible
       before_script:
