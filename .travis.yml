@@ -48,6 +48,18 @@ jobs:
         - '3.6'
       script:
         - tox -e checkmigrations-fail
+    - name: "Test"
+      dist: focal
+      python:
+        - '3.6'
+      script:
+        - tox -e test
+    - name: "Behave"
+      dist: focal
+      python:
+        - '3.6'
+      script:
+        - tox -e behave
     - name: "npm build"
       language: node_js
       node_js:
