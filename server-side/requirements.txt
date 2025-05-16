@@ -6,7 +6,7 @@
 #
 amqp==5.3.1
     # via kombu
-asgiref==3.4.1
+asgiref==3.8.1
     # via django
 billiard==4.2.1
     # via celery
@@ -114,6 +114,8 @@ sqlparse==0.4.2
     # via django
 tai5-uan5-gian5-gi2-kang1-ku7==1.1.1
     # via -r requirements.in
+typing-extensions==4.13.2
+    # via asgiref
 tzdata==2025.2
     # via kombu
 urllib3==1.26.7

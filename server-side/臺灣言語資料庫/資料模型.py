@@ -13,15 +13,11 @@ from django.db import models
 from django.db.models import Count
 from django.db.models.deletion import CASCADE
 
-from libavwrapper.avconv import Input, Output, AVConv
-from libavwrapper.codec import AudioCodec, NO_VIDEO
-
 
 from 臺灣言語工具.解析整理.拆文分析器 import 拆文分析器
 from 臺灣言語資料庫.欄位資訊 import 語句
 from 臺灣言語工具.語音辨識.聲音檔 import 聲音檔
 from 臺灣言語工具.基本物件.公用變數 import 分型音符號
-from 臺灣言語工具.解析整理.文章粗胚 import 文章粗胚
 
 
 class 屬性表函式:

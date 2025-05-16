@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 
 from celery.schedules import crontab
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -164,6 +166,9 @@ INSTALLED_APPS += (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+)
+MIDDLEWARE += (
+    'allauth.account.middleware.AccountMiddleware',
 )
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`

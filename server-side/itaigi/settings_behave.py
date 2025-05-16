@@ -1,9 +1,9 @@
 from .settings import INSTALLED_APPS
 from .settings import *  # noqa
 
-INSTALLED_APPS += [
+INSTALLED_APPS += (
     'behave_django',
-]
+)
 
 
 DATABASES = {
