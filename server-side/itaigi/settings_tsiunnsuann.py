@@ -25,6 +25,10 @@ if os.getenv('SSL_REDIRECT', default=True) and DEPLOY_HOST != ['localhost']:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
+
+
+CELERY_TASK_ALWAYS_EAGER = False
+
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 DATABASES = {

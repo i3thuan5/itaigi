@@ -208,6 +208,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERYD_CONCURRENCY = 1
 
 CELERY_TIMEZONE = TIME_ZONE
+CELERY_TASK_ALWAYS_EAGER = True
 CELERYBEAT_SCHEDULE = {
     '半瞑自sheets掠轉資料庫': {
         'task': '臺灣言語平臺.tasks.半瞑自sheets掠轉資料庫',

@@ -5,7 +5,6 @@ INSTALLED_APPS += (
     'behave_django',
 )
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
