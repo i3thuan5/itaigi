@@ -217,6 +217,10 @@ CELERYBEAT_SCHEDULE = {
     },
 }
 
+broker_url = 'amqp://{}:{}@{}:5672/{}'.format(
+    'itaigi', 'itaigi', 'localhost', 'itaigi'
+)
+
 
 try:
     from .local_settings import SECRET_KEY
