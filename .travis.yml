@@ -43,21 +43,12 @@ jobs:
       script:
         - tox -e shellcheck
     - name: "Check Migrations"
-      dist: focal
-      python:
-        - '3.6'
       script:
         - tox -e checkmigrations
     - name: "Test"
-      dist: focal
-      python:
-        - '3.6'
       script:
         - tox -e test
     - name: "Behave"
-      dist: focal
-      python:
-        - '3.6'
       script:
         - tox -e behave
     - name: "npm build"
