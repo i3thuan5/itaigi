@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>藏起不需要的詞條</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <table class="highlight responsive-table">
+            <thead>
+                <tr>
+                    <th data-field="id" class="">編號</th>
+                    <th data-field="name" class="">項目名稱</th>
+                    <th data-field="status" class="">顯示的狀態</th>
+                    <th data-field="btn" class="">按鈕</th>
+                </tr>
+    
+            </thead>
+
+            <tbody>
+
+            {% for 詞條 in 資料 %}
+                <tr>
+                    <td name="id"> {{ 詞條.編號 }} </td>
+                    <td name="name"> {{ 詞條.名稱 }} </td>
+                    <td name="status">
+                        {% if 詞條.愛藏起來 %}
+                            <font style="font-weight: bolder; color: red;">隱藏</font>
+                        {% else %}
+                            <font style="font-weight: bolder; color: green;">顯示</font>
+                        {% endif %}
+                    </td>
+                    <td name="btn"><a class="waves-effect waves-light btn">按我顯示/隱藏</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <script>
+        $(function() {
+            $('a.btn').on('click',function(e) {
+                var id = e.target.parentElement.parentElement.querySelectorAll('[name=id]')[0].innerText;
+                var td_stat = e.target.parentElement.parentElement.querySelectorAll('[name=status]')[0];
+                var stat = td_stat.getElementsByTagName('font')[0];
+                if (stat.style.color == 'red')
+                {
+                    stat.style.color = 'green';
+                    stat.innerText = '顯示';
+                }
+                else if (stat.style.color == 'green')
+                {
+                    stat.style.color = 'red';
+                    stat.innerText = '隱藏';
+                }
+
+                $.ajax({
+                    url  : '/平臺項目/把測試資料藏起來',
+                    type : 'POST',
+                    dataType : 'HTML',
+                    data: {
+                        資料編號: id, 
+                    },
+                    beforeSend: function (request)
+                    {
+                        request.setRequestHeader('X-CSRFToken', '{{ csrf_token }}');
+                    },
+                    success: function(res) {
+                        //location.reload();
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>

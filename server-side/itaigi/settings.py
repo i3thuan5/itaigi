@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 
 from celery.schedules import crontab
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -165,6 +167,9 @@ INSTALLED_APPS += (
     'allauth.account',
     'allauth.socialaccount',
 )
+MIDDLEWARE += (
+    'allauth.account.middleware.AccountMiddleware',
+)
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
@@ -203,6 +208,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERYD_CONCURRENCY = 1
 
 CELERY_TIMEZONE = TIME_ZONE
+CELERY_TASK_ALWAYS_EAGER = True
 CELERYBEAT_SCHEDULE = {
     '半瞑自sheets掠轉資料庫': {
         'task': '臺灣言語平臺.tasks.半瞑自sheets掠轉資料庫',
@@ -210,6 +216,10 @@ CELERYBEAT_SCHEDULE = {
         'args': ()
     },
 }
+
+broker_url = 'amqp://{}:{}@{}:5672/{}'.format(
+    'itaigi', 'itaigi', 'localhost', 'itaigi'
+)
 
 
 try:
