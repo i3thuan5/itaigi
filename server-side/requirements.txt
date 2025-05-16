@@ -44,8 +44,6 @@ rsa==4.8
 six==1.16.0
 sqlparse==0.4.2
 tai5-uan5-gian5-gi2-kang1-ku7==1.0.0
-tai5-uan5-gian5-gi2-phing5-tai5 @ https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_phing5-tai5/archive/master.zip
-tai5-uan5-gian5-gi2-tsu1-liau7-khoo3==3.1.21
 typing-extensions==4.0.1
 urllib3==1.26.7
 whitenoise==5.3.0
