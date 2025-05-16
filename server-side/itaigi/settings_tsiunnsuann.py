@@ -24,3 +24,16 @@ if os.getenv('SSL_REDIRECT', default=True) and DEPLOY_HOST != ['localhost']:
     SECURE_HSTS_SECONDS = 10
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'itaigi',
+        'HOST': 'postgres',
+        'PORT': '',
+    }
+}
