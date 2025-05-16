@@ -3,7 +3,7 @@ gunicorn
 whitenoise
 
 # tsu-liau-khoo
-tai5-uan5-gian5-gi2-kang1-ku7==1.0.0
+tai5-uan5-gian5-gi2-kang1-ku7>1.0.0
 pyyaml
 psycopg2
 django-cors-headers
