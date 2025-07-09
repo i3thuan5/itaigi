@@ -42,12 +42,15 @@ jobs:
         - pip install tox
       script:
         - tox -e shellcheck
-    - name: "Check Migrations(Fail)"
-      dist: focal
-      python:
-        - '3.6'
+    - name: "Check Migrations"
       script:
-        - tox -e checkmigrations-fail
+        - tox -e checkmigrations
+    - name: "Test"
+      script:
+        - tox -e test
+    - name: "Behave"
+      script:
+        - tox -e behave
     - name: "npm build"
       language: node_js
       node_js:

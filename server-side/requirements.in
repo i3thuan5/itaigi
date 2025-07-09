@@ -1,4 +1,19 @@
 django
 gunicorn
 whitenoise
-https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_phing5-tai5/archive/master.zip
+
+# tsu-liau-khoo
+tai5-uan5-gian5-gi2-kang1-ku7
+pyyaml
+psycopg2
+django-cors-headers
+pypi-libavwrapper
+
+# ping-tai
+django-allauth
+python-dateutil
+django-cors-headers
+pyOpenSSL
+oauth2client
+gspread
+celery

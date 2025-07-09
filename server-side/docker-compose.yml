@@ -1,0 +1,14 @@
+---
+services:
+  rabbitmq:
+    image: rabbitmq:3-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: itaigi
+      RABBITMQ_DEFAULT_PASS: itaigi
+      RABBITMQ_DEFAULT_VHOST: itaigi
+    volumes:
+      - rabbit_data:/var/lib/rabbitmq
+    network_mode: host
+
+volumes:
+  rabbit_data:
