@@ -2,6 +2,7 @@
 branches:
   only:
     - main
+    - 0914-sukoo
 os: linux
 dist: jammy
 language: python
@@ -59,7 +60,7 @@ jobs:
         - npm run build
     - stage: deploy
       name: deploy
-      if: (type = push or type = cron) and (branch = main)
+      if: (type = push or type = cron) and (branch = main or branch = 0914-sukoo)
       install:
         - pip install ansible
       before_script:

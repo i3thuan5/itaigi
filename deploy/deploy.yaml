@@ -42,6 +42,6 @@
       delegate_to: localhost
     - name: 更新資料庫
       ansible.builtin.command: |
-        docker-compose exec -T gunicorn python manage.py migrate
+        docker compose exec -T gunicorn python manage.py migrate
       args:
         chdir: "{{ tsuanan_path }}"

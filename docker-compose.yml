@@ -1,7 +1,7 @@
 ---
 services:
   gunicorn:
-    build: ./
+    image: ithuan/itaigi:latest
     networks:
       - default
       - nginx-bridge
@@ -23,14 +23,14 @@ services:
     volumes:
       - pgsql_data:/var/lib/postgresql/data
   celery_beat:
-    build: ./
+    image: ithuan/itaigi:latest
     command: celery -A itaigi beat -l info --pidfile=
     environment:
       DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
       SECRET_KEY: ${SECRET_KEY}
     restart: always
   celery:
-    build: ./
+    image: ithuan/itaigi:latest
     command: celery -A itaigi worker -l info
     environment:
       DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
