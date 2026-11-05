@@ -12,9 +12,9 @@ MAINTAINER sih4sing5hong5
 
 # Debian bullseye已經EOL，套件搬去archive.debian.org
 RUN printf '%s\n' \
-  'deb http://archive.debian.org/debian bullseye main' \
-  'deb http://archive.debian.org/debian bullseye-updates main' \
-  'deb http://archive.debian.org/debian-security bullseye-security main' \
+  'deb https://archive.debian.org/debian bullseye main' \
+  'deb https://archive.debian.org/debian bullseye-updates main' \
+  'deb https://archive.debian.org/debian-security bullseye-security main' \
   > /etc/apt/sources.list && \
   rm -f /etc/apt/sources.list.d/*.list
 RUN apt-get update && \
