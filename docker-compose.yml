@@ -25,6 +25,7 @@ services:
     labels:
       - backup.postgres=true
     shm_size: '1gb'
+    cpus: 5.0
     restart: always
     environment:
       POSTGRES_PASSWORD: itaigi
