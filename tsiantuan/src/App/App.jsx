@@ -17,18 +17,14 @@ var debug = Debug('itaigi:App');
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { csrftoken: '', 編號: '無登入' };
-    this.看編號();
+    this.state = { csrftoken: '' };
+    this.看csrftoken();
   }
 
-  看編號() {
+  看csrftoken() {
     superagent.get(encodeURI(後端.網址() + 'csrf/看'))
         .withCredentials()
         .then(({ body }) => (this.setState({ csrftoken: body.csrftoken }), null))
-        .catch((err) => (debug(err)));
-    superagent.get(encodeURI(後端.網址() + '使用者/看編號'))
-        .withCredentials()
-        .then(({ body }) => (this.setState({ 編號: body.使用者編號 }), null))
         .catch((err) => (debug(err)));
   }
 
@@ -78,7 +74,6 @@ export default class App extends React.Component {
             查怎樣講: this.查怎樣講.bind(this),
             欲提供講法: this.欲提供講法.bind(this),
             csrftoken: this.state.csrftoken,
-            編號: this.state.編號,
             開例句: this.開例句.bind(this),
             variables: { 關鍵字: k },
             renderLoading: <載入頁面/>,

@@ -7,7 +7,7 @@ COPY tsiantuan/ .
 RUN sed 's+https://itaigi.tw/+/+g' -i src/後端.jsx
 RUN npm run build
 
-FROM python:3.6-bullseye@sha256:f8652afaf88c25f0d22354d547d892591067aa4026a7fa9a6819df9f300af6fc
+FROM python:3.6-bullseye@sha256:d097a4907a8ec079df5ac31872359c2de510f82214c0448e926393b376d3b60d
 MAINTAINER sih4sing5hong5
 
 # Debian bullseye已經EOL，套件搬去archive.debian.org
