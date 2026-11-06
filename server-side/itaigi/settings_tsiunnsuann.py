@@ -4,6 +4,7 @@ from .settings import * # noqa
 DEPLOY_HOST = os.getenv('DEPLOY_HOST').split(',')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
+STATIC_ROOT = '/static'
 DEBUG = False
 
 CSRF_COOKIE_SECURE = True
