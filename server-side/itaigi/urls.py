@@ -2,12 +2,17 @@ from urllib.parse import quote
 
 from django.conf import settings
 from django.conf.urls import include, url
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls.conf import path
 from django.views.static import serve
 
+TNG_SU_HANTU = 10
+
 
 def seo(request, su, huasu=None, im=None):
+    guasu = huasu if huasu is not None else su
+    if len(guasu) >= TNG_SU_HANTU:
+        return redirect('/', permanent=True)
     return pangboo(
         request, status=200,
         title='{} - iTaigi 愛台語'.format(su),
