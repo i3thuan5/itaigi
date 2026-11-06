@@ -1,14 +1,19 @@
 ---
 services:
-  gunicorn:
-    build: ./
-    networks:
-      - default
-      - nginx-bridge
+  nginx:
+    image: nginx:1.28.0-alpine
     environment:
       VIRTUAL_HOST: ${DEPLOY_HOST:-itaigi.tw}
       LETSENCRYPT_HOST: ${DEPLOY_HOST:-itaigi.tw}
-      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
+    networks:
+      - default
+      - nginx-bridge
+    volumes:
+      - "./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro"
+    restart: always
+  gunicorn:
+    build: ./
+    environment:
       DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
       SECRET_KEY: ${SECRET_KEY}
     restart: always

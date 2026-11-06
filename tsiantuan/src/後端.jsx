@@ -41,10 +41,6 @@ export default class 後端  {
     return encodeURI(this.網址() +  '平臺項目列表/揣列表?關鍵字=' + 名);
   }
 
-  static 揣上新貢獻的外語() {
-    return encodeURI(this.網址() + '平臺項目列表/揣上新貢獻的外語');
-  }
-
   static 名姓(姓, 名) {
     return encodeURI('https://miasenn.itaigi.tw/' +  姓 +  '/' + 名 + '/');
   }

@@ -38,7 +38,7 @@ class Kong extends React.Component {
     return (
       <錯誤 華語關鍵字={this.props.kongData.關鍵字}
         csrftoken={this.props.csrftoken}
-        編號={this.props.編號} 漢字={this.props.location.query.漢字} 音標={this.props.location.query.音標}
+        漢字={this.props.location.query.漢字} 音標={this.props.location.query.音標}
         內容={this.props.kongData.內容}/>
     );
   }
@@ -48,7 +48,7 @@ class Kong extends React.Component {
       <無結果 華語關鍵字={this.props.kongData.關鍵字}
         csrftoken={this.props.csrftoken}
         pathname={this.props.location.pathname}
-        編號={this.props.編號} 漢字={this.props.location.query.漢字} 音標={this.props.location.query.音標}
+        漢字={this.props.location.query.漢字} 音標={this.props.location.query.音標}
         內容={this.props.kongData.內容}
         開例句={this.props.開例句.bind(this)}/>
     );
@@ -59,7 +59,7 @@ class Kong extends React.Component {
       <有講法 華語關鍵字={this.props.kongData.關鍵字}
         csrftoken={this.props.csrftoken}
         pathname={this.props.location.pathname}
-        編號={this.props.編號} 漢字={this.props.location.query.漢字} 音標={this.props.location.query.音標}
+        漢字={this.props.location.query.漢字} 音標={this.props.location.query.音標}
         內容={this.props.kongData.內容}
         開例句={this.props.開例句.bind(this)}/>
     );
