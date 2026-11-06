@@ -39,7 +39,7 @@ nvm use 16
 [Wiki](https://github.com/g0v/itaigi/wiki)
 
 ```bash
-zcat TSULIAUKHOO.sql.gz | docker-compose exec -T postgres psql -U postgres
+zcat TSULIAUKHOO.sql.gz | docker compose exec -T postgres psql -U postgres
 ```
 
 ## 更新、上線
