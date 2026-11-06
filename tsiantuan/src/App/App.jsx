@@ -41,10 +41,6 @@ export default class App extends React.Component {
     }
   }
 
-  欲提供講法(外語) {
-    browserHistory.replace('/t/' + 外語);
-  }
-
   開例句(外語, 漢字, 台羅) {
     browserHistory.replace(
       '/k/' + encodeURIComponent(外語) +
@@ -72,7 +68,6 @@ export default class App extends React.Component {
           this.props.children,
           {
             查怎樣講: this.查怎樣講.bind(this),
-            欲提供講法: this.欲提供講法.bind(this),
             csrftoken: this.state.csrftoken,
             開例句: this.開例句.bind(this),
             variables: { 關鍵字: k },
