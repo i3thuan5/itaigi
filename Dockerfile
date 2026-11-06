@@ -27,9 +27,11 @@ COPY server-side/ .
 ENV DJANGO_SETTINGS_MODULE=itaigi.settings_tsiunnsuann
 
 COPY --from=tsiantuan /assets/build/ whitenoise_static/tsiantuan/
+RUN mkdir /static
 
 EXPOSE 8000
-CMD python manage.py collectstatic --no-input && \
+CMD cp -r whitenoise_static/tsiantuan /static/tsiantuan && \
+  python manage.py collectstatic --no-input && \
   gunicorn -b 0.0.0.0:8000 \
   --workers 2 --threads 5 \
   --max-requests 1000 \
