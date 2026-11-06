@@ -29,13 +29,11 @@ urlpatterns = [
         'document_root': settings.MEDIA_ROOT,
     }),
     path('k/<su>/', seo),
-    path('t/<su>/', seo),
     #
     #     url: `https://itaigi.tw/${Iah}/${Su}`,
     #     title: `${Su} - iTaigi 愛台語`,
     #     image: `https://www.moedict.tw/${encodeURI(Su)}.png?font=wt064`,
 
-    path('t/<huasu>/<su>/<im>', seo),
     path('k/<huasu>/<su>/<im>', seo),
     #     url: `https://itaigi.tw/${Iah}/${HuaSu}/${TaiSu}/${Im}`,
     #     title: `${TaiSu} - iTaigi 愛台語`,

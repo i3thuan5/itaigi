@@ -10,12 +10,15 @@ services:
       - nginx-bridge
     volumes:
       - "./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro"
+      - static_data:/static:ro
     restart: always
   gunicorn:
     build: ./
     environment:
       DEPLOY_HOST: ${DEPLOY_HOST:-itaigi.tw}
       SECRET_KEY: ${SECRET_KEY}
+    volumes:
+      - static_data:/static
     restart: always
   postgres:
     image: postgres:15
@@ -78,6 +81,7 @@ services:
 volumes:
   pgsql_data:
   rabbit_data:
+  static_data:
 
 networks:
   nginx-bridge:
